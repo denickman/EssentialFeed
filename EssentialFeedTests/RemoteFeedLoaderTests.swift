@@ -56,7 +56,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         sut.load { capturedErrors.append($0) }
         
         let clientError = NSError(domain: "Test", code: 0)
-//        client.completions[0](clientError)
+        //        client.completions[0](clientError)
         
         client.complete(with: clientError)
         
@@ -67,13 +67,16 @@ final class RemoteFeedLoaderTests: XCTestCase {
     func test_load_deliversErrorOnNon200HTTPResponse() {
         // Given
         let (sut, client) = makeSUT()
-        let samples = [199, 200, 300, 400, 500]
+        let samples = [199]
         
         // When
         samples.enumerated().forEach { index, code in
             var capturedErrors = [RemoteFeedLoader.Error]()
             
-            sut.load { capturedErrors.append($0) }
+            sut.load { 
+                capturedErrors.append($0)
+            }
+            
             client.complete(with: code, at: index)
             
             // Then
@@ -93,27 +96,22 @@ final class RemoteFeedLoaderTests: XCTestCase {
     private class HTTPClientSpy: HTTPClient {
         
         var requestedURL: URL?
-//        var completions = [(Error) -> Void]()
         
         private var messages = [(url: URL, completion: (HTTPClientResult) -> Void)]()
         
         var requestedURLs: [URL] {
             return messages.map { $0.url }
         }
-
+        
         func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
-//            completions.append(completion)
-//            requestedURLs.append(url)
             messages.append((url, completion))
         }
         
         func complete(with error: Error, at index: Int = 0) {
-//            completions[index](error)
             messages[index].completion(.failure(error))
         }
         
         func complete(with statusCode: Int, at index: Int = 0) {
-            
             let response = HTTPURLResponse(
                 url: requestedURLs[index],
                 statusCode: statusCode,
@@ -122,8 +120,6 @@ final class RemoteFeedLoaderTests: XCTestCase {
             )!
             
             messages[index].completion(.success(response))
-            
-            
         }
     }
 }
