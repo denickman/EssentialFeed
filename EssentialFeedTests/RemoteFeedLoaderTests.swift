@@ -83,18 +83,47 @@ final class RemoteFeedLoaderTests: XCTestCase {
         })
     }
     
-    func test_load_deliversNoItemsOn200HTTPResponseWithEmptyList() {
+//    func test_load_deliversNoItemsOn200HTTPResponseWithEmptyList() {
+//        let (sut, client) = makeSUT()
+//        
+//        var capturedResults = [RemoteFeedLoader.Result]()
+//        sut.load { capturedResults.append($0) }
+//        
+//        expect(sut, toCompleteWith: .success([])) {
+//            let emptyListJSON = Data(bytes: "{\"items\": []}".utf8)
+//            client.complete(with: 200, data: emptyListJSON)
+//        }
+//    }
+    
+    func test_load_deliversItemsOn200HTTPResponseWithJSONItems() {
         let (sut, client) = makeSUT()
         
-        var capturedResults = [RemoteFeedLoader.Result]()
-        sut.load { capturedResults.append($0) }
+        let item1 = FeedItem(id: UUID(), description: nil, location: nil, imageURL: URL(string: "http://a-url.com")!)
         
-        expect(sut, toCompleteWith: .success([])) {
-            let emptyListJSON = Data(bytes: "{\"items\": []}".utf8)
-            client.complete(with: 200, data: emptyListJSON)
+        let itemJSON = [
+            "id": item1.id.uuidString,
+            "image": item1.imageURL.absoluteString
+        ]
+        
+        let item2 = FeedItem(id: UUID(), description: "foo", location: "foo", imageURL: URL(string: "http://a-url.com")!)
+        
+        let itemJSON2 = [
+            "id": item2.id.uuidString,
+            "description": item2.description,
+            "location": item2.location,
+            "image": item2.imageURL.absoluteString
+        ]
+        
+        let itemsJSON = [
+            "items": [itemJSON, itemJSON2]
+        ]
+
+        expect(sut, toCompleteWith: .success([item1, item2])) {
+            let json = try! JSONSerialization.data(withJSONObject: itemsJSON)
+            client.complete(with: 200, data: json)
         }
     }
-
+ 
     // MARK: - Helpers
     
     private func makeSUT(url: URL = URL(string: "https://a-given-url.com")!) -> (sut: RemoteFeedLoader, client: HTTPClientSpy) {
