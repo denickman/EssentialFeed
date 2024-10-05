@@ -18,33 +18,45 @@ public protocol HTTPClient {
 
 public class RemoteFeedLoader {
     
-    private let url: URL
-    private let client: HTTPClient
-    
     public enum Error: Swift.Error {
         case connectivity
         case invalidData
     }
+    
+    public enum Result: Equatable {
+        case success([FeedItem])
+        case failure(Error)
+    }
+    
+    // MARK: - Properties
+    
+    private let url: URL
+    private let client: HTTPClient
+    
+    // MARK: - Init
     
     public init(url: URL, client: HTTPClient) {
         self.client = client
         self.url = url
     }
     
-    public func load(completion: @escaping (Error) -> Void) {
-        //        HTTPClient.shared.requestedURL = URL(string: "https://google.com")
-        //        client.get(from: URL(string: "https://a-url.com")!)
+    // MARK: - Methods
+    
+    public func load(completion: @escaping (Result) -> Void) {
         client.get(from: url) { result in
-            
             switch result {
-            case .success:
-                completion(.invalidData)
+            case let .success(data, _):
+                if let json = try? JSONSerialization.jsonObject(with: data) {
+                    completion(.success([]))
+                } else {
+                    completion(.failure(.invalidData))
+                }
                 
-            case .failure:
-                completion(.connectivity)
+            case .failure(let error):
+                completion(.failure(.connectivity))
             }
         }
     }
 }
-
-
+    
+    
