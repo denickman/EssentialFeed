@@ -9,15 +9,17 @@ import Foundation
 
 public class RemoteFeedLoader {
     
+    public typealias Result = LoadFeedResult<Error>
+    
     public enum Error: Swift.Error {
         case connectivity
         case invalidData
     }
     
-    public enum Result: Equatable {
-        case success([FeedItem])
-        case failure(Error)
-    }
+//    public enum Result: Equatable {
+//        case success([FeedItem])
+//        case failure(Error)
+//    }
     
     // MARK: - Properties
     
