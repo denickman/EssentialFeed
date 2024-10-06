@@ -53,7 +53,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         var capturedErrors = [RemoteFeedLoader.Error]()
         
         // When
-        expect(sut, toCompleteWith: .failure(RemoteFeedLoader.Error.connectivity)) {
+        expect(sut, toCompleteWith: .failure(.connectivity)) {
             let clientError = NSError(domain: "Test", code: 0)
             client.complete(with: clientError)
         }
@@ -66,7 +66,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         
         // When
         samples.enumerated().forEach { index, code in
-            expect(sut, toCompleteWith: .failure(RemoteFeedLoader.Error.invalidData)) {
+            expect(sut, toCompleteWith: .failure(.invalidData)) {
                 
                 let json = makeItemsJSON([])
                 
@@ -80,7 +80,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         let (sut, client) = makeSUT()
         
         // When
-        expect(sut, toCompleteWith: .failure(RemoteFeedLoader.Error.invalidData), when: {
+        expect(sut, toCompleteWith: .failure(.invalidData), when: {
             let invalidJSON = Data(bytes: "invalid_json".utf8)
             client.complete(with: 200, data: invalidJSON)
         })
@@ -115,7 +115,6 @@ final class RemoteFeedLoaderTests: XCTestCase {
         }
     }
     
-    
     func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
         let url = URL(string: "http://a-url.com")!
         let client = HTTPClientSpy()
@@ -135,6 +134,10 @@ final class RemoteFeedLoaderTests: XCTestCase {
     }
     
     // MARK: - Helpers
+    
+    private func failure(_ error: RemoteFeedLoader.Error) -> RemoteFeedLoader.Result {
+        return .failure(error)
+    }
     
     private func makeSUT(
         url: URL = URL(string: "https://a-given-url.com")!,
@@ -203,19 +206,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
             "location": location,
             "image": imageURL.absoluteString
         ].compactMapValues { $0 }
-        
-        // Old option
-        //        let json = [
-        //            "id": id.uuidString,
-        //            "description": description,
-        //            "location": location,
-        //            "image": imageURL.absoluteString
-        //        ].reduce(into: [String: Any]()) { (acc, el) in
-        //            if let value = el.value {
-        //                acc[el.key] = value
-        //            }
-        //        }
-        
+
         return (model, json)
     }
     
