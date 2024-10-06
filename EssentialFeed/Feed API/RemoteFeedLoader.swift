@@ -9,7 +9,7 @@ import Foundation
 
 public class RemoteFeedLoader: FeedLoader {
     
-    public typealias Result = LoadFeedResult<Error>
+    public typealias Result = LoadFeedResult
     
     public enum Error: Swift.Error {
         case connectivity
@@ -43,7 +43,7 @@ public class RemoteFeedLoader: FeedLoader {
                 completion(FeedItemsMapper.map(data, from: response))
                 
             case .failure:
-                completion(.failure(.connectivity))
+                completion(.failure(Error.connectivity))
             }
         }
     }
