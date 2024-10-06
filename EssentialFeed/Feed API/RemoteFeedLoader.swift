@@ -16,11 +16,6 @@ public class RemoteFeedLoader: FeedLoader {
         case invalidData
     }
     
-//    public enum Result: Equatable {
-//        case success([FeedItem])
-//        case failure(Error)
-//    }
-    
     // MARK: - Properties
     
     private let url: URL
