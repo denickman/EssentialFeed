@@ -78,8 +78,8 @@
             filePath = "EssentialFeedTests/RemoteFeedLoaderTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
             <Locations>
@@ -141,8 +141,8 @@
             filePath = "EssentialFeedTests/RemoteFeedLoaderTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
             <Locations>
@@ -189,8 +189,8 @@
             filePath = "EssentialFeedTests/RemoteFeedLoaderTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
             <Locations>
@@ -237,8 +237,8 @@
             filePath = "EssentialFeedTests/RemoteFeedLoaderTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "complete(with:data:at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -253,8 +253,8 @@
             filePath = "EssentialFeedTests/RemoteFeedLoaderTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "complete(with:at:)"
             landmarkType = "7">
             <Locations>
@@ -301,8 +301,8 @@
             filePath = "EssentialFeedTests/RemoteFeedLoaderTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
             landmarkName = "get(from:completion:)"
             landmarkType = "7">
             <Locations>
@@ -506,8 +506,8 @@
             filePath = "EssentialFeedTests/RemoteFeedLoaderTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "makeItemsJSON(_:)"
             landmarkType = "7">
          </BreakpointContent>
