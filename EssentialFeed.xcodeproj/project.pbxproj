@@ -36,6 +36,7 @@
 		854371692CB28AC600FE9DE5 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		8543716B2CB28B4800FE9DE5 /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 		8543716E2CB2A16F00FE9DE5 /* EssentialFeedTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EssentialFeedTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		8543716F2CB2A7EB00FE9DE5 /* EssentialFeedGuide.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = EssentialFeedGuide.playground; sourceTree = SOURCE_ROOT; };
 		856134AC2CAFD6CA000F190F /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
 		85E7D54D2CAD4B9B00BB030A /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +63,7 @@
 		080EDEE721B6DA7E00813479 = {
 			isa = PBXGroup;
 			children = (
+				8543716F2CB2A7EB00FE9DE5 /* EssentialFeedGuide.playground */,
 				080EDEF321B6DA7E00813479 /* EssentialFeed */,
 				080EDEFE21B6DA7E00813479 /* EssentialFeedTests */,
 				080EDEF221B6DA7E00813479 /* Products */,
