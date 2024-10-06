@@ -87,8 +87,10 @@ final class RemoteFeedLoaderTests: XCTestCase {
     }
     
     func test_load_deliversNoItemsOn200HTTPResponseWithEmptyList() {
+        // Given
         let (sut, client) = makeSUT()
-
+        
+        // When
         expect(sut, toCompleteWith: .success([])) {
             let emptyListJSON = makeItemsJSON([]) // Data(bytes: "{\"items\": []}".utf8)
             client.complete(with: 200, data: emptyListJSON)
@@ -96,24 +98,23 @@ final class RemoteFeedLoaderTests: XCTestCase {
     }
     
     func test_load_deliversItemsOn200HTTPResponseWithJSONItems() {
-        
         let (sut, client) = makeSUT()
         
         let item1 = makeItem(id: UUID(), imageURL: URL(string: "http://a-url.com")!)
         let item2 = makeItem(id: UUID(), description: "foo", location: "foo", imageURL: URL(string: "http://a-url.com")!)
-  
+        
         let itemsJSON = [
             "items": [item1.json, item2.json]
         ]
         
         let items = [item1.model, item2.model]
-
+        
         expect(sut, toCompleteWith: .success(items)) {
             let json = makeItemsJSON([item1.json, item2.json])
             client.complete(with: 200, data: json)
         }
     }
- 
+    
     // MARK: - Helpers
     
     private func makeSUT(url: URL = URL(string: "https://a-given-url.com")!) -> (sut: RemoteFeedLoader, client: HTTPClientSpy) {
@@ -145,21 +146,29 @@ final class RemoteFeedLoaderTests: XCTestCase {
         location: String? = nil,
         imageURL: URL
     ) -> (model: FeedItem, json: [String: Any]) {
+        
         let model = FeedItem(id: id, description: description, location: location, imageURL: imageURL)
         
+        // New option
         let json = [
             "id": id.uuidString,
             "description": description,
             "location": location,
             "image": imageURL.absoluteString
-        ].reduce(into: [String: Any]()) { (acc, el) in
-            
-            if let value = el.value {
-                acc[el.key] = value
-            }
-            
-        }
-
+        ].compactMapValues { $0 }
+        
+        // Old option
+        //        let json = [
+        //            "id": id.uuidString,
+        //            "description": description,
+        //            "location": location,
+        //            "image": imageURL.absoluteString
+        //        ].reduce(into: [String: Any]()) { (acc, el) in
+        //            if let value = el.value {
+        //                acc[el.key] = value
+        //            }
+        //        }
+        
         return (model, json)
     }
     
@@ -168,7 +177,6 @@ final class RemoteFeedLoaderTests: XCTestCase {
         return try! JSONSerialization.data(withJSONObject: json)
     }
     
-
     private class HTTPClientSpy: HTTPClient {
         
         // MARK: - Properties
