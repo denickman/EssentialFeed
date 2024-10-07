@@ -1494,8 +1494,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "get(from:completion:)"
             landmarkType = "7">
             <Locations>
@@ -1572,8 +1572,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "get(from:completion:)"
             landmarkType = "7">
             <Locations>
@@ -1688,84 +1688,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "856E9549-13F4-4F7C-ACC3-B3DD92913F1F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "resume()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "856E9549-13F4-4F7C-ACC3-B3DD92913F1F - 9817daa0f2f72819"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.URLSessionDataTaskSpy.resume() -&gt; ()"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "856E9549-13F4-4F7C-ACC3-B3DD92913F1F - 9817daa0f2f754da"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.URLSessionDataTaskSpy.resume() -&gt; ()"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "856E9549-13F4-4F7C-ACC3-B3DD92913F1F - 9817daa0f2f75556"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.URLSessionDataTaskSpy.resume() -&gt; ()"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "128"
-                  endingLineNumber = "128"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "856E9549-13F4-4F7C-ACC3-B3DD92913F1F - 9817daa0f2f7566f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.URLSessionDataTaskSpy.resume() -&gt; ()"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E2FBC4D9-C5FA-41D2-8405-62EFA4C76C02"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1773,8 +1695,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "test_getFromURL_failsOnRequestError()"
             landmarkType = "7">
             <Locations>
@@ -1836,8 +1758,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "test_getFromURL_failsOnRequestError()"
             landmarkType = "7">
             <Locations>
@@ -1899,8 +1821,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "test_getFromURL_failsOnRequestError()"
             landmarkType = "7">
             <Locations>
@@ -1962,8 +1884,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "test_getFromURL_failsOnRequestError()"
             landmarkType = "7">
             <Locations>
@@ -2070,8 +1992,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "test_getFromURL_failsOnRequestError()"
             landmarkType = "7">
             <Locations>
@@ -2133,8 +2055,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "test_getFromURL_failsOnRequestError()"
             landmarkType = "7">
             <Locations>
@@ -2196,8 +2118,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "test_getFromURL_failsOnRequestError()"
             landmarkType = "7">
             <Locations>
@@ -2252,258 +2174,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ED79816F-7395-4FE9-B667-35D471CF84BF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "dataTask(with:completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "ED79816F-7395-4FE9-B667-35D471CF84BF - 180abebeaeeaf9fe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.URLSessionSpy.dataTask(with: Foundation.URL, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "444">
-               </Location>
-               <Location
-                  uuid = "ED79816F-7395-4FE9-B667-35D471CF84BF - 180abebeaeeaf97a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.URLSessionSpy.dataTask(with: Foundation.URL, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "444">
-               </Location>
-               <Location
-                  uuid = "ED79816F-7395-4FE9-B667-35D471CF84BF - 725148d4b9ec12dc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.HTTPSessionSpy.dataTask(with: Foundation.URL, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; EssentialFeedTests.HTTPSessionTask"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "508">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C258EC9C-0770-4F6E-A6CD-D6A0CD39C9F8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "dataTask(with:completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C258EC9C-0770-4F6E-A6CD-D6A0CD39C9F8 - 180abebeaeeafa5d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.URLSessionSpy.dataTask(with: Foundation.URL, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
-                  offsetFromSymbolStart = "536">
-               </Location>
-               <Location
-                  uuid = "C258EC9C-0770-4F6E-A6CD-D6A0CD39C9F8 - 180abebeaeeaf9d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.URLSessionSpy.dataTask(with: Foundation.URL, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
-                  offsetFromSymbolStart = "536">
-               </Location>
-               <Location
-                  uuid = "C258EC9C-0770-4F6E-A6CD-D6A0CD39C9F8 - 725148d4b9ec1241"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.HTTPSessionSpy.dataTask(with: Foundation.URL, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; EssentialFeedTests.HTTPSessionTask"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "604">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "826FF6E6-AC3C-4220-80C0-1FC20A03029F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "dataTask(with:completionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "826FF6E6-AC3C-4220-80C0-1FC20A03029F - 180abebeaeeafa1f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.URLSessionSpy.dataTask(with: Foundation.URL, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "384">
-               </Location>
-               <Location
-                  uuid = "826FF6E6-AC3C-4220-80C0-1FC20A03029F - 180abebeaeeaf99b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.URLSessionSpy.dataTask(with: Foundation.URL, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "384">
-               </Location>
-               <Location
-                  uuid = "826FF6E6-AC3C-4220-80C0-1FC20A03029F - 725148d4b9ec1283"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.HTTPSessionSpy.dataTask(with: Foundation.URL, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; EssentialFeedTests.HTTPSessionTask"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "420">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D9E4508E-1BC0-4AAA-A18C-A61491EA7DF5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "stub(url:task:error:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D9E4508E-1BC0-4AAA-A18C-A61491EA7DF5 - 3d96e929eeaace27"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.URLSessionSpy.stub(url: Foundation.URL, task: __C.NSURLSessionDataTask, error: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "160">
-               </Location>
-               <Location
-                  uuid = "D9E4508E-1BC0-4AAA-A18C-A61491EA7DF5 - 3d96e929eeaacfab"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.URLSessionSpy.stub(url: Foundation.URL, task: __C.NSURLSessionDataTask, error: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "160">
-               </Location>
-               <Location
-                  uuid = "D9E4508E-1BC0-4AAA-A18C-A61491EA7DF5 - eb3f60138cb321c5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTest.HTTPSessionSpy.stub(url: Foundation.URL, task: EssentialFeedTests.HTTPSessionTask, error: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "122"
-                  endingLineNumber = "122"
-                  offsetFromSymbolStart = "156">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D365B748-C17C-47B3-8686-ADF1ED92FA2E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -2511,8 +2181,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "get(from:completion:)"
             landmarkType = "7">
             <Locations>
@@ -2574,8 +2244,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "init(session:)"
             landmarkType = "7">
             <Locations>
@@ -2622,8 +2292,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "get(from:completion:)"
             landmarkType = "7">
             <Locations>

@@ -5,5 +5,6 @@
         <page name='Dependency Diagram'/>
         <page name='Architecture and Modular Design'/>
         <page name='Mock, Stub, Spy'/>
+        <page name='URLProtocol'/>
     </pages>
 </playground>
