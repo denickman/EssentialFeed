@@ -49,7 +49,6 @@ final class RemoteFeedLoaderTests: XCTestCase {
     func test_load_deliversErrorOnClientError() {
         // Given
         let (sut, client) = makeSUT()
-        
         var capturedErrors = [RemoteFeedLoader.Error]()
         
         // When
@@ -67,9 +66,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         // When
         samples.enumerated().forEach { index, code in
             expect(sut, toCompleteWith: failure(.invalidData)) {
-                
                 let json = makeItemsJSON([])
-                
                 client.complete(with: code, data: json, at: index)
             }
         }
