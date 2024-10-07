@@ -4,5 +4,6 @@
         <page name='Singleton vs Global State'/>
         <page name='Dependency Diagram'/>
         <page name='Architecture and Modular Design'/>
+        <page name='Mock, Stub, Spy'/>
     </pages>
 </playground>
