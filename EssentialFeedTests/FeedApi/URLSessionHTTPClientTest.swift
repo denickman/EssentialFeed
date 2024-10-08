@@ -24,7 +24,7 @@ class URLSessionHTTPClient {
     
     func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
         
-        let url = URL(string: "http://wrong-url.com")!
+//        let url = URL(string: "http://wrong-url.com")!
         
         
         session.dataTask(with: url) { data, response, error in
@@ -39,10 +39,16 @@ class URLSessionHTTPClient {
 
 
 final class URLSessionHTTPClientTest: XCTestCase {
-    
-    func test_getFromURL_performsGETRequestWithURL() {
+
+    override func setUp() {
         URLProtocolStub.startInerceptingRequest()
+    }
+    
+    override func tearDown() {
+        URLProtocolStub.stopInerceptingRequest()
+    }
         
+    func test_getFromURL_performsGETRequestWithURL() {
         let url = URL(string: "http://any-url.com")!
         let exp = expectation(description: "Wait for request")
         
@@ -55,15 +61,12 @@ final class URLSessionHTTPClientTest: XCTestCase {
         URLSessionHTTPClient().get(from: url) { completion in }
         
         wait(for: [exp], timeout: 1.0)
-        URLProtocolStub.stopInerceptingRequest()
     }
     
     func test_getFromURL_failsOnRequestError() {
         
         // GIVEN
-        
-        URLProtocolStub.startInerceptingRequest()
-        
+
         let url = URL(string: "http://any-url.com")!
         let error = NSError(domain: "any error", code: 1)
         
@@ -91,7 +94,6 @@ final class URLSessionHTTPClientTest: XCTestCase {
         }
         
         wait(for: [exp], timeout: 1.0)
-        URLProtocolStub.stopInerceptingRequest()
     }
     
     // MARK: - Helpers
