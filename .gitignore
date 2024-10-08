@@ -1,2 +1,5 @@
 .DS_Store
 *.xcuserstate
+*.xcuserdatad/
+*.xcuserdatad/**/xcdebugger/
+*.xcuserdatad/**/Breakpoints_v2.xcbkptlist
