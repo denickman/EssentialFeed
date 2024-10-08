@@ -23,6 +23,89 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
+=======
+            uuid = "BF521B26-63E6-4557-A4DB-4BFDD6CE22CE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "get(from:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BF521B26-63E6-4557-A4DB-4BFDD6CE22CE - 219955fb33e82c9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EssentialFeedTests.URLSessionHTTPClient.get(from: Foundation.URL, completion: (EssentialFeed.HTTPClientResult) -&gt; ()) -&gt; ()"
+                  moduleName = "EssentialFeedTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "BF521B26-63E6-4557-A4DB-4BFDD6CE22CE - efe795a80999b7e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EssentialFeedTests.URLSessionHTTPClient.get(from: Foundation.URL, completion: (EssentialFeed.HTTPClientResult) -&gt; ()) -&gt; ()"
+                  moduleName = "EssentialFeedTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBBDEB28-B097-4D6A-952B-617EE2F028F5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "get(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2002A8F-40CC-4C5B-B4D0-7524A03EDD1E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "get(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+>>>>>>> 212ef98 (Delivers error on all invalid representation cases)
             uuid = "969B4A9B-9214-44BB-942D-69F39F078BB6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -30,9 +113,31 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "64"
             endingLineNumber = "64"
             landmarkName = "test_getFromURL_performsGETRequestWithURL()"
+=======
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "URLSessionHTTPClientTest"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "328A3DFD-0AFA-41A1-A066-DE3440FB2DC8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "canonicalRequest(for:)"
+>>>>>>> 212ef98 (Delivers error on all invalid representation cases)
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -46,9 +151,15 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "139"
             endingLineNumber = "139"
             landmarkName = "anyError()"
+=======
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "startLoading()"
+>>>>>>> 212ef98 (Delivers error on all invalid representation cases)
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,9 +173,15 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "143"
             endingLineNumber = "143"
             landmarkName = "anyHTTPURLResponse()"
+=======
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "startLoading()"
+>>>>>>> 212ef98 (Delivers error on all invalid representation cases)
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,9 +195,15 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "147"
             endingLineNumber = "147"
             landmarkName = "nonHTTPResponse()"
+=======
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "startLoading()"
+>>>>>>> 212ef98 (Delivers error on all invalid representation cases)
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -94,10 +217,17 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "150"
             endingLineNumber = "150"
             landmarkName = "URLProtocolStub"
             landmarkType = "3">
+=======
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "startLoading()"
+            landmarkType = "7">
+>>>>>>> 212ef98 (Delivers error on all invalid representation cases)
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,10 +240,17 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "157"
             endingLineNumber = "157"
             landmarkName = "Stub"
             landmarkType = "14">
+=======
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "stub(data:response:error:)"
+            landmarkType = "7">
+>>>>>>> 212ef98 (Delivers error on all invalid representation cases)
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,10 +263,17 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "161"
             endingLineNumber = "161"
             landmarkName = "URLProtocolStub"
             landmarkType = "3">
+=======
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "startInerceptingRequest()"
+            landmarkType = "7">
+>>>>>>> 212ef98 (Delivers error on all invalid representation cases)
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -142,9 +286,15 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "165"
             endingLineNumber = "165"
             landmarkName = "canInit(with:)"
+=======
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "stopInerceptingRequest()"
+>>>>>>> 212ef98 (Delivers error on all invalid representation cases)
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
