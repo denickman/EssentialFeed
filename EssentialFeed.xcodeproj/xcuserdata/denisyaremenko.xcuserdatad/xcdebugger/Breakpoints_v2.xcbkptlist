@@ -80,8 +80,13 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "37"
             endingLineNumber = "37"
+=======
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+>>>>>>> main
             landmarkName = "get(from:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -96,8 +101,13 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "32"
             endingLineNumber = "32"
+=======
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+>>>>>>> main
             landmarkName = "get(from:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -114,6 +124,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
 <<<<<<< HEAD
+<<<<<<< HEAD
             startingLineNumber = "64"
             endingLineNumber = "64"
             landmarkName = "test_getFromURL_performsGETRequestWithURL()"
@@ -122,6 +133,12 @@
             endingLineNumber = "79"
             landmarkName = "URLSessionHTTPClientTest"
             landmarkType = "3">
+=======
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "test_getFromURL_failsOnRequestError()"
+            landmarkType = "7">
+>>>>>>> main
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -134,8 +151,13 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "175"
             endingLineNumber = "175"
+=======
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+>>>>>>> main
             landmarkName = "canonicalRequest(for:)"
 >>>>>>> 212ef98 (Delivers error on all invalid representation cases)
             landmarkType = "7">
@@ -152,12 +174,17 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
 <<<<<<< HEAD
+<<<<<<< HEAD
             startingLineNumber = "139"
             endingLineNumber = "139"
             landmarkName = "anyError()"
 =======
             startingLineNumber = "181"
             endingLineNumber = "181"
+=======
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+>>>>>>> main
             landmarkName = "startLoading()"
 >>>>>>> 212ef98 (Delivers error on all invalid representation cases)
             landmarkType = "7">
@@ -174,12 +201,17 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
 <<<<<<< HEAD
+<<<<<<< HEAD
             startingLineNumber = "143"
             endingLineNumber = "143"
             landmarkName = "anyHTTPURLResponse()"
 =======
             startingLineNumber = "185"
             endingLineNumber = "185"
+=======
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+>>>>>>> main
             landmarkName = "startLoading()"
 >>>>>>> 212ef98 (Delivers error on all invalid representation cases)
             landmarkType = "7">
@@ -196,12 +228,17 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
 <<<<<<< HEAD
+<<<<<<< HEAD
             startingLineNumber = "147"
             endingLineNumber = "147"
             landmarkName = "nonHTTPResponse()"
 =======
             startingLineNumber = "189"
             endingLineNumber = "189"
+=======
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+>>>>>>> main
             landmarkName = "startLoading()"
 >>>>>>> 212ef98 (Delivers error on all invalid representation cases)
             landmarkType = "7">
@@ -218,6 +255,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
 <<<<<<< HEAD
+<<<<<<< HEAD
             startingLineNumber = "150"
             endingLineNumber = "150"
             landmarkName = "URLProtocolStub"
@@ -225,6 +263,10 @@
 =======
             startingLineNumber = "192"
             endingLineNumber = "192"
+=======
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+>>>>>>> main
             landmarkName = "startLoading()"
             landmarkType = "7">
 >>>>>>> 212ef98 (Delivers error on all invalid representation cases)
@@ -241,6 +283,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
 <<<<<<< HEAD
+<<<<<<< HEAD
             startingLineNumber = "157"
             endingLineNumber = "157"
             landmarkName = "Stub"
@@ -248,6 +291,10 @@
 =======
             startingLineNumber = "200"
             endingLineNumber = "200"
+=======
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+>>>>>>> main
             landmarkName = "stub(data:response:error:)"
             landmarkType = "7">
 >>>>>>> 212ef98 (Delivers error on all invalid representation cases)
@@ -264,6 +311,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
 <<<<<<< HEAD
+<<<<<<< HEAD
             startingLineNumber = "161"
             endingLineNumber = "161"
             landmarkName = "URLProtocolStub"
@@ -271,6 +319,10 @@
 =======
             startingLineNumber = "204"
             endingLineNumber = "204"
+=======
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+>>>>>>> main
             landmarkName = "startInerceptingRequest()"
             landmarkType = "7">
 >>>>>>> 212ef98 (Delivers error on all invalid representation cases)
@@ -287,12 +339,17 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
 <<<<<<< HEAD
+<<<<<<< HEAD
             startingLineNumber = "165"
             endingLineNumber = "165"
             landmarkName = "canInit(with:)"
 =======
             startingLineNumber = "208"
             endingLineNumber = "208"
+=======
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+>>>>>>> main
             landmarkName = "stopInerceptingRequest()"
 >>>>>>> 212ef98 (Delivers error on all invalid representation cases)
             landmarkType = "7">
