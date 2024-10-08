@@ -23,86 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BF521B26-63E6-4557-A4DB-4BFDD6CE22CE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "get(from:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BF521B26-63E6-4557-A4DB-4BFDD6CE22CE - 219955fb33e82c9c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClient.get(from: Foundation.URL, completion: (EssentialFeed.HTTPClientResult) -&gt; ()) -&gt; ()"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "176">
-               </Location>
-               <Location
-                  uuid = "BF521B26-63E6-4557-A4DB-4BFDD6CE22CE - efe795a80999b7e0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EssentialFeedTests.URLSessionHTTPClient.get(from: Foundation.URL, completion: (EssentialFeed.HTTPClientResult) -&gt; ()) -&gt; ()"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "104">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CBBDEB28-B097-4D6A-952B-617EE2F028F5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "get(from:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D2002A8F-40CC-4C5B-B4D0-7524A03EDD1E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "get(from:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "969B4A9B-9214-44BB-942D-69F39F078BB6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -110,25 +30,9 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "test_getFromURL_failsOnRequestError()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "328A3DFD-0AFA-41A1-A066-DE3440FB2DC8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "canInit(with:)"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "test_getFromURL_performsGETRequestWithURL()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -142,9 +46,9 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "startLoading()"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "anyError()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -158,9 +62,9 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "startLoading()"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "anyHTTPURLResponse()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -174,9 +78,9 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "startLoading()"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "nonHTTPResponse()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -190,10 +94,10 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "startLoading()"
-            landmarkType = "7">
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "URLProtocolStub"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -206,10 +110,10 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "URLProtocolStub"
-            landmarkType = "3">
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "Stub"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -222,10 +126,10 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "stub(data:response:error:)"
-            landmarkType = "7">
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "URLProtocolStub"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -238,9 +142,9 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
-            landmarkName = "startInerceptingRequest()"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "canInit(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
