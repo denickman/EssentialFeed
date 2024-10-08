@@ -26,7 +26,7 @@ class URLSessionHTTPClient {
         
 //        let url = URL(string: "http://wrong-url.com")!
         
-        
+         
         session.dataTask(with: url) { data, response, error in
             
             if let error {
@@ -58,7 +58,7 @@ final class URLSessionHTTPClientTest: XCTestCase {
             exp.fulfill()
         }
         
-        URLSessionHTTPClient().get(from: url) { completion in }
+        makeSUT().get(from: url) { completion in }
         
         wait(for: [exp], timeout: 1.0)
     }
@@ -74,10 +74,9 @@ final class URLSessionHTTPClientTest: XCTestCase {
         
         // WHEN
         
-        let sut = URLSessionHTTPClient()
         let exp = expectation(description: "Wait for completion")
         
-        sut.get(from: url) { result in
+        makeSUT().get(from: url) { result in
             switch result {
             case let .failure(receivedError as NSError):
                 // not comparable due to urlsession adding extra data during processing the error
@@ -98,6 +97,12 @@ final class URLSessionHTTPClientTest: XCTestCase {
     
     // MARK: - Helpers
     
+    
+    private func makeSUT() -> URLSessionHTTPClient {
+        URLSessionHTTPClient()
+    }
+    
+
     private class URLProtocolStub: URLProtocol {
         
         // MARK: - Properties
