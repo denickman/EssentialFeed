@@ -23,7 +23,6 @@ class URLSessionHTTPClient {
     // MARK: - Methods
     
     func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
-        
         struct UnexpectedValueRepresentation: Error {}
         
         session.dataTask(with: url) { data, response, error in
