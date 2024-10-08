@@ -126,9 +126,9 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "canonicalRequest(for:)"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "canInit(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -142,8 +142,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "startLoading()"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "startLoading()"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "startLoading()"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "startLoading()"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,10 +206,10 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "stub(data:response:error:)"
-            landmarkType = "7">
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "URLProtocolStub"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -222,9 +222,9 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "startInerceptingRequest()"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "stub(data:response:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -238,9 +238,9 @@
             filePath = "EssentialFeedTests/FeedApi/URLSessionHTTPClientTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "stopInerceptingRequest()"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "startInerceptingRequest()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
