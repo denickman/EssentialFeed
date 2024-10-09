@@ -25,4 +25,4 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode_16.0.app
             
     - name: Build and Test
-      run: xcodebuild test -project FeedAPIChallenge.xcodeproj -scheme "EssentialFeed" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO SWIFT_TREAT_WARNINGS_AS_ERRORS=YES OTHER_SWIFT_FLAGS="-D ED_SKIP_SWIFT_FORMAT"
+      run: xcodebuild test -project EssentialFeed.xcodeproj -scheme "EssentialFeed" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO SWIFT_TREAT_WARNINGS_AS_ERRORS=YES OTHER_SWIFT_FLAGS="-D ED_SKIP_SWIFT_FORMAT"

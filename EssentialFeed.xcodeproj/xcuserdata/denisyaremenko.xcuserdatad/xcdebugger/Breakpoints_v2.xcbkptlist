@@ -63,8 +63,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "161"
-                  endingLineNumber = "161"
-                  offsetFromSymbolStart = "432">
+                  endingLineNumber = "161">
                </Location>
                <Location
                   uuid = "06073F02-0666-479F-8D0B-CAB4C3CD96C6 - b052b4d592f4c4d"
@@ -78,8 +77,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "161"
-                  endingLineNumber = "161"
-                  offsetFromSymbolStart = "200">
+                  endingLineNumber = "161">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -175,8 +173,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "156">
+                  endingLineNumber = "34">
                </Location>
                <Location
                   uuid = "C5796559-C0C2-44E0-92F8-0B64BC55C499 - c67af270d928c1c4"
@@ -190,8 +187,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "100">
+                  endingLineNumber = "34">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -271,8 +267,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "244">
+                  endingLineNumber = "54">
                </Location>
                <Location
                   uuid = "FB7837E6-9E02-43B9-A992-512D5AEC7ACF - 3417b9a6c89e3ec1"
@@ -286,8 +281,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "36">
+                  endingLineNumber = "54">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -319,8 +313,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "340">
+                  endingLineNumber = "66">
                </Location>
                <Location
                   uuid = "96778967-335C-46B1-ACD0-A6D993FF9F3F - 24b0e701fea0012d"
@@ -334,23 +327,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  uuid = "96778967-335C-46B1-ACD0-A6D993FF9F3F - 5437c668731aa2fe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.RemoteFeedLoaderTests.test_load_deliversErrorOnNon200HTTPResponse() -&gt; ()"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/RemoteFeedLoaderTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "324">
+                  endingLineNumber = "66">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -382,8 +359,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "116">
+                  endingLineNumber = "67">
                </Location>
                <Location
                   uuid = "A4AFE151-4106-4AEF-86D8-21714A0762B3 - ec4246c4be3b09b0"
@@ -397,8 +373,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "80">
+                  endingLineNumber = "67">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -449,38 +424,6 @@
             endingLineNumber = "62"
             landmarkName = "test_load_deliversErrorOnNon200HTTPResponse()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "51F9AF33-F79D-4651-AC42-3B7AE2892B9B - 5437c668731aa262"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.RemoteFeedLoaderTests.test_load_deliversErrorOnNon200HTTPResponse() -&gt; ()"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/RemoteFeedLoaderTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "192">
-               </Location>
-               <Location
-                  uuid = "51F9AF33-F79D-4651-AC42-3B7AE2892B9B - 5437c668731aa262"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.RemoteFeedLoaderTests.test_load_deliversErrorOnNon200HTTPResponse() -&gt; ()"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisyaremenko/Desktop/iOS/Education/CAIO&amp;MIKE/EssentialFeed/EssentialFeed/EssentialFeedTests/FeedApi/RemoteFeedLoaderTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "212">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
