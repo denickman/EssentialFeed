@@ -63,7 +63,7 @@ class HTTPClientStub: HTTPClient {
 }
 
 // Тест
-class MyTests: XCTestCase {
+class MyTests2: XCTestCase {
     func test_HTTPClientStub() {
         let stub = HTTPClientStub()
         let expectedData = "Hello, world!".data(using: .utf8)
@@ -96,7 +96,7 @@ class HTTPClientSpy: HTTPClient {
 }
 
 // Тест
-class MyTests: XCTestCase {
+class MyTests3: XCTestCase {
     func test_HTTPClientSpy() {
         let spy = HTTPClientSpy()
         let url = URL(string: "http://test.com")!

@@ -49,7 +49,6 @@ final class RemoteFeedLoaderTests: XCTestCase {
     func test_load_deliversErrorOnClientError() {
         // Given
         let (sut, client) = makeSUT()
-        var capturedErrors = [RemoteFeedLoader.Error]()
         
         // When
         expect(sut, toCompleteWith: failure(.connectivity)) {
