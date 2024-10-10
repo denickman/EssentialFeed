@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class FeedItemsMapper {
+enum FeedItemsMapper {
     
     private static var OK_200: Int { return 200 }
     

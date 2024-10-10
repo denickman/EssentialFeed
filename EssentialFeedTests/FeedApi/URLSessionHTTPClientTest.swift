@@ -1,5 +1,5 @@
 //
-//  URLSessionHTTPClientTest2.swift
+//  URLSessionHTTPClientTest.swift
 //  EssentialFeedTests
 //
 //  Created by Denis Yaremenko on 09.10.2024.
@@ -8,7 +8,7 @@
 import XCTest
 import EssentialFeed
 
-final class URLSessionHTTPClientTest2: XCTestCase {
+final class URLSessionHTTPClientTest: XCTestCase {
     
     override func setUp() {
         URLProtocolStub.startInerceptingRequest()
