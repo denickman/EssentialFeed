@@ -9,7 +9,7 @@ import XCTest
 import EssentialFeed
 
 final class EssentialFeedAPIEndToEndTests: XCTestCase {
-    
+
     func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
         switch getFeedResult() {
         case let .success(items)?:
@@ -84,7 +84,8 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
     
     private func getFeedResult( file: StaticString = #filePath, line: UInt = #line) -> LoadFeedResult? {
         let testServerURL = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
-        let client = URLSessionHTTPClient()
+        // The default directory when running tests is /Users/{your-user-name}/Library/Caches/com.apple.dt.xctest.tool
+        let client = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
         let loader = RemoteFeedLoader(url: testServerURL, client: client)
         
         trackForMemoryLeaks(client, file: file, line: line)
@@ -99,11 +100,31 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
             exp.fulfill()
         }
         
-        wait(for: [exp], timeout: 5.0) // take 2.067 seconds to get a response
+        wait(for: [exp], timeout: 3.0) // take 2.067 seconds to get a response
+        
+//        sleep(5)
+        
         return receivedResult
     }
 }
 
+
+extension EssentialFeedAPIEndToEndTests {
+//    func demo() {
+//        let cache = URLCache(memoryCapacity: 10 * 1024 * 1024, diskCapacity: 100 * 1024 * 1024, directory: nil)
+//        
+//        let config = URLSessionConfiguration.default
+//        config.urlCache = cache
+//        config.requestCachePolicy = .reloadIgnoringCacheData
+//        let session = URLSession(configuration: config)
+//        
+//        let url = URL(string: "https://any-url.com")!
+//        let request = URLRequest.init(url: url, cachePolicy: .returnCacheDataDontLoad)
+//        
+//
+//        URLCache.shared = cache
+//    }
+}
 
  
  
