@@ -9,13 +9,17 @@ import XCTest
 import EssentialFeed
 
 class FeedStore {
-    var deleteCachedFeedCallCount = 0
-    var insertCallCount = 0
-    var insertions = [(items: [FeedItem], timestamp: Date)]()
+    
+    // MARK: - Properties
     
     typealias DeletionCompletion = (Error?) -> Void
     
+    var deleteCachedFeedCallCount = 0
+    var insertions = [(items: [FeedItem], timestamp: Date)]()
+    
     private var deletionCompletions = [DeletionCompletion]()
+    
+    // MARK: - Methods
     
     func deleteCachedFeed(completion: @escaping DeletionCompletion) {
         deleteCachedFeedCallCount += 1
@@ -31,10 +35,8 @@ class FeedStore {
     }
     
     func insert(_ items: [FeedItem], timestamp: Date) {
-        insertCallCount += 1
         insertions.append((items, timestamp))
     }
- 
 }
 
 class LocalFeedLoader {
@@ -50,7 +52,7 @@ class LocalFeedLoader {
     func save(_ items: [FeedItem]) {
         store.deleteCachedFeed { [unowned self] error in
             if error == nil {
-                self.store.insert(items, timestamp: self.currentDate())
+                self.store.insert(items, timestamp: self.currentDate() )
             }
         }
     }
@@ -78,17 +80,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         sut.save(items)
         
         store.completeDeletion(with: deletionError)
-        XCTAssertEqual(store.insertCallCount, .zero)
-    }
-    
-    func test_save_requestsNewCacheInsertionOnSuccesfulDeletion() {
-        let (sut, store) = makeSUT()
-        let items = [uniqueItem(), uniqueItem()]
-        
-        sut.save(items)
-        
-        store.completeDeletionSuccessfully()
-        XCTAssertEqual(store.insertCallCount, 1)
+        XCTAssertEqual(store.insertions.count, .zero)
     }
     
     func test_save_requestsNewCacheInsertionWithTimestampOnSuccesfulDeletion() {
@@ -98,9 +90,11 @@ final class CacheFeedUseCaseTests: XCTestCase {
         let (sut, store) = makeSUT(currentDate: {timestamp })
         
         sut.save(items)
-        
         store.completeDeletionSuccessfully()
+        
         XCTAssertEqual(store.insertions.count, 1)
+        XCTAssertEqual(store.insertions.first?.items, items)
+        XCTAssertEqual(store.insertions.first?.timestamp, timestamp)
     }
     
     // MARK: - Helpers
