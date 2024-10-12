@@ -1856,8 +1856,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "test_save_doesNotDeliverDeletionError_afterSUTInstanceHasBeenDeallocated()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1872,8 +1872,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "test_save_doesNotDeliverDeletionError_afterSUTInstanceHasBeenDeallocated()"
             landmarkType = "7">
             <Locations>
@@ -1918,8 +1918,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "test_save_doesNotDeliverDeletionError_afterSUTInstanceHasBeenDeallocated()"
             landmarkType = "7">
             <Locations>
@@ -1964,8 +1964,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "test_save_doesNotDeliverDeletionError_afterSUTInstanceHasBeenDeallocated()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1980,8 +1980,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "test_save_doesNotDeliverDeletionError_afterSUTInstanceHasBeenDeallocated()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1996,8 +1996,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "test_save_doesNotDeliverDeletionError_afterSUTInstanceHasBeenDeallocated()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2012,8 +2012,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "completeDeletion(with:at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2028,8 +2028,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "deleteCachedFeed(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2044,8 +2044,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "completeDeletionSuccessfully(at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2060,8 +2060,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "insert(_:timestamp:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2076,8 +2076,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "completeInsertion(with:at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2092,8 +2092,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "completeInsertionSuccessfully(at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2147,38 +2147,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E24EE487-0257-420E-89B7-0C8E293906B5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "save(_:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "735FC341-6C38-4515-84B0-5C43CAC6A302"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "save(_:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "BE2F7D4C-A063-4C61-B8BC-5EF5B32FCAEA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -2202,8 +2170,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "deleteCachedFeed(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2218,8 +2186,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "test_save_doesNotDeliverInsertionError_afterSUTInstanceHasBeenDeallocated()"
             landmarkType = "7">
             <Locations>
@@ -2264,8 +2232,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "test_save_doesNotDeliverInsertionError_afterSUTInstanceHasBeenDeallocated()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2280,8 +2248,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "test_save_doesNotDeliverInsertionError_afterSUTInstanceHasBeenDeallocated()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2296,8 +2264,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "test_save_doesNotDeliverInsertionError_afterSUTInstanceHasBeenDeallocated()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2312,8 +2280,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "test_save_doesNotDeliverInsertionError_afterSUTInstanceHasBeenDeallocated()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2328,8 +2296,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
             landmarkName = "insert(_:timestamp:completion:)"
             landmarkType = "7">
          </BreakpointContent>
