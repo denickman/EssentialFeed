@@ -14,8 +14,8 @@ struct RemoteFeedItem: Decodable {
     let location: String?
     let image: URL
     
-    var item: FeedItem {
-        .init(id: id, description: description, location: location, imageURL: image)
+    var item: FeedImage {
+        .init(id: id, description: description, location: location, url: image)
     }
 }
 
