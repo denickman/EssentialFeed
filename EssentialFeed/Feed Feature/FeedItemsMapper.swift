@@ -7,18 +7,6 @@
 
 import Foundation
 
-
-struct RemoteFeedItem: Decodable {
-    let id: UUID
-    let description: String?
-    let location: String?
-    let image: URL
-    
-    var item: FeedItem {
-        .init(id: id, description: description, location: location, imageURL: image)
-    }
-}
-
 enum FeedItemsMapper {
     
     private static var OK_200: Int { return 200 }

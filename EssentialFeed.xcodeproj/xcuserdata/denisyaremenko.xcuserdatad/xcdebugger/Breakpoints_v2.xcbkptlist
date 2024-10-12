@@ -302,8 +302,8 @@
             filePath = "EssentialFeed/Feed Feature/FeedItemsMapper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "map(_:from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,8 +318,8 @@
             filePath = "EssentialFeed/Feed Feature/FeedItemsMapper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "map(_:from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,8 +334,8 @@
             filePath = "EssentialFeed/Feed Feature/FeedItemsMapper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "map(_:from:)"
             landmarkType = "7">
          </BreakpointContent>
