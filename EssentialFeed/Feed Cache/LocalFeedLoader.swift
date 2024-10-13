@@ -10,6 +10,7 @@ import Foundation
 public final class LocalFeedLoader {
     
     public typealias SaveResult = Error?
+    public typealias LoadResult = LoadFeedResult
     
     // MARK: - Properties
     
@@ -37,8 +38,14 @@ public final class LocalFeedLoader {
         }
     }
     
-    public func load(completion: @escaping (Error?) -> Void) {
-        store.retrieve(completion: completion)
+    public func load(completion: @escaping (LoadResult) -> Void) {
+        store.retrieve { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success([]))
+            }
+        }
     }
     
     private func cache(_ feed: [FeedImage], with completion: @escaping (SaveResult) -> Void) {
