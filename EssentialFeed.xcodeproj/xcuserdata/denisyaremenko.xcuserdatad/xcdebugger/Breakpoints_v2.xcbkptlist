@@ -2558,8 +2558,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "init(store:currentDate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2574,8 +2574,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "save(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2590,8 +2590,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "save(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2606,8 +2606,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "save(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2622,8 +2622,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "load(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2638,8 +2638,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "load(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2654,10 +2654,10 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "Array"
-            landmarkType = "21">
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "toLocal()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2670,10 +2670,10 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "Array"
-            landmarkType = "21">
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "toModels()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3230,8 +3230,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "save(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3246,8 +3246,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "load(completion:)"
             landmarkType = "7">
          </BreakpointContent>
