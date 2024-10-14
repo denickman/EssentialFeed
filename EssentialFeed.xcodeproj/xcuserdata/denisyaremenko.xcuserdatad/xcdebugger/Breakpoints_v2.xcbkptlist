@@ -2254,8 +2254,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "makeSUT(currentDate:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2270,8 +2270,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "makeSUT(currentDate:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2286,8 +2286,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2302,8 +2302,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2318,8 +2318,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2334,8 +2334,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2350,8 +2350,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2366,8 +2366,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "uniqueImageFeed()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2382,8 +2382,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "adding(days:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2398,8 +2398,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "adding(seconds:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2695,22 +2695,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "43A872FC-7178-4BE3-A349-3CA7C5E0A4BF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "load(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DFB4AEB2-E781-4E82-AC3D-A7B9E49873A1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -2718,8 +2702,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "validate(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2734,8 +2718,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "validate(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2750,8 +2734,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "validate(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2766,8 +2750,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "cache(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2782,8 +2766,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "cache(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2798,8 +2782,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "toLocal()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2814,8 +2798,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "toModels()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2830,8 +2814,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "uniqueImage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2862,8 +2846,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "load(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3582,8 +3566,8 @@
             filePath = "EssentialFeed/Feed Cache/LocalFeedLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "cache(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3632,7 +3616,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "test_load_deletesCacheOnRetrievalError()"
+            landmarkName = "test_load_hasNoSideEffectsOnRetrievalError()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3648,7 +3632,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
             endingLineNumber = "77"
-            landmarkName = "test_load_deletesCacheOnRetrievalError()"
+            landmarkName = "test_load_hasNoSideEffectsOnRetrievalError()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3664,7 +3648,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
             endingLineNumber = "75"
-            landmarkName = "test_load_deletesCacheOnRetrievalError()"
+            landmarkName = "test_load_hasNoSideEffectsOnRetrievalError()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3680,7 +3664,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
             endingLineNumber = "76"
-            landmarkName = "test_load_deletesCacheOnRetrievalError()"
+            landmarkName = "test_load_hasNoSideEffectsOnRetrievalError()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3694,8 +3678,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3710,8 +3694,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3726,8 +3710,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3742,8 +3726,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3758,8 +3742,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3774,8 +3758,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3790,8 +3774,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
             landmarkType = "7">
          </BreakpointContent>

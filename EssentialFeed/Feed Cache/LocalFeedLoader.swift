@@ -26,7 +26,7 @@ public final class LocalFeedLoader {
         self.currentDate = currentDate
     }
     
-    // MARK: - Methods
+    // MARK: - Public Methods
     
     public func save(_ feed: [FeedImage], completion: @escaping (SaveResult) -> Void) {
         store.deleteCachedFeed { [weak self] error in
@@ -50,7 +50,6 @@ public final class LocalFeedLoader {
                 completion(.success(feed.toModels()))
                 
             case let .failure(error):
-                self.store.deleteCachedFeed { _ in }
                 completion(.failure(error))
                 
             case .found:
@@ -62,6 +61,18 @@ public final class LocalFeedLoader {
             }
         }
     }
+    
+    public func validateCache() {
+        store.retrieve { [unowned self] result in
+            switch result {
+            case .failure:
+                self.store.deleteCachedFeed { _ in }
+            default: break
+            }
+        }
+    }
+    
+    // MARK: - Private Methods
     
     private func validate(_ timestamp: Date) -> Bool {
         guard let maxCacheAge = calendar.date(byAdding: .day, value: maxCachedAgeInDays, to: timestamp) else {
