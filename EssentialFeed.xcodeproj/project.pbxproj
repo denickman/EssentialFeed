@@ -222,8 +222,8 @@
 				8545CD512CBBDE14002F4521 /* Helpers */,
 				8545CD522CBBDE14002F4521 /* Info */,
 				859BA5762CB7E90800691DE8 /* CacheFeedUseCaseTests.swift */,
-				85835D742CBD1B0500CA082C /* ValidateFeedCacheUseCaseTests.swift */,
 				850CD4FC2CBBD54200E4F396 /* LoadFeedFromCacheUseCaseTests.swift */,
+				85835D742CBD1B0500CA082C /* ValidateFeedCacheUseCaseTests.swift */,
 				8545CD572CBBDE8F002F4521 /* FeedStoreSpy.swift */,
 			);
 			path = "Feed Cache";

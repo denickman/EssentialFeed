@@ -3680,7 +3680,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
             endingLineNumber = "96"
-            landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
+            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3696,7 +3696,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
-            landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
+            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3712,7 +3712,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
-            landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
+            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3728,7 +3728,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
             endingLineNumber = "92"
-            landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
+            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3744,7 +3744,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
+            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3760,7 +3760,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
             endingLineNumber = "90"
-            landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
+            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3776,7 +3776,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
             endingLineNumber = "89"
-            landmarkName = "test_load_doesNotDeletesCacheOnLessThanSevenDaysOldCache()"
+            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
