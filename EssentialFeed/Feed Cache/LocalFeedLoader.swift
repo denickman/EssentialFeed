@@ -11,12 +11,14 @@ private final class FeedCachePolicy {
     
     // MARK: - Properties
     
-    private let calendar = Calendar(identifier: .gregorian)
-    private var maxCachedAgeInDays: Int { 7 }
+    private static let calendar = Calendar(identifier: .gregorian)
+    private static var maxCachedAgeInDays: Int { 7 }
+    
+    private init() {}
 
     // MARK: - Methods
     
-    func validate(_ timestamp: Date, against date: Date) -> Bool {
+    static func validate(_ timestamp: Date, against date: Date) -> Bool {
         guard let maxCacheAge = calendar.date(byAdding: .day, value: maxCachedAgeInDays, to: timestamp) else {
             return false
         }
@@ -29,7 +31,6 @@ public final class LocalFeedLoader {
     // MARK: - Properties
     
     private let store: FeedStore
-    private let cachePolicy = FeedCachePolicy()
     private let currentDate: () -> Date
     
     // MARK: - Init
@@ -76,7 +77,7 @@ extension LocalFeedLoader: FeedLoader {
             guard let self else { return }
             
             switch result {
-            case let .found(feed, timestamp) where self.cachePolicy.validate(timestamp, against: self.currentDate()):
+            case let .found(feed, timestamp) where FeedCachePolicy.validate(timestamp, against: self.currentDate()):
                 completion(.success(feed.toModels()))
                 
             case let .failure(error):
@@ -97,7 +98,7 @@ extension LocalFeedLoader {
             case .failure:
                 self.store.deleteCachedFeed { _ in }
                 
-            case let .found(_, timestamp) where !self.cachePolicy.validate(timestamp, against: self.currentDate()):
+            case let .found(_, timestamp) where !FeedCachePolicy.validate(timestamp, against: self.currentDate()):
                 self.store.deleteCachedFeed { _ in }
                 
             case .empty, .found: break
