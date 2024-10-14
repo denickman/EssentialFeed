@@ -40,7 +40,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         let timestamp = Date()
         
         let feed = uniqueImageFeed()
-        let (sut, store) = makeSUT(currentDate: {timestamp })
+        let (sut, store) = makeSUT(currentDate: { timestamp })
         
         sut.save(feed.models) { _ in }
         store.completeDeletionSuccessfully()
@@ -124,7 +124,6 @@ final class CacheFeedUseCaseTests: XCTestCase {
     private func anyError() -> NSError {
         NSError(domain: "any error", code: 0)
     }
-    
     
     private func uniqueImage() -> FeedImage {
         FeedImage(id: UUID(), description: "any", location: "any", url: anyURL())
