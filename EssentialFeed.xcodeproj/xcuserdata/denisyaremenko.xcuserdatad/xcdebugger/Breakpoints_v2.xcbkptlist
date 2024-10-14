@@ -1815,102 +1815,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6C644FD1-1B8D-45A7-AFF9-7CE6A646238A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "test_load_deliversNoImagesOnMoreThanSevenDaysOldCache()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D2D5035F-CF07-462C-83D5-9049FCBB7035"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "test_load_deliversNoImagesOnMoreThanSevenDaysOldCache()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2E4A9D7C-DD34-474A-94B5-5666F0126097"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "test_load_deliversNoImagesOnMoreThanSevenDaysOldCache()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4FFFBD8F-265A-4789-8A9C-CC6B28FCDC34"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "test_load_deliversNoImagesOnMoreThanSevenDaysOldCache()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C9F9860C-75C7-4E15-BD54-93D32A89F29B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "test_load_deliversNoImagesOnMoreThanSevenDaysOldCache()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "21DBD247-E287-4537-91DD-88ECC9754E9F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "test_load_deliversNoImagesOnSevenDaysOldCache()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "FDDFB9B3-DB9D-4D0C-987F-11DB9C3235B9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1918,9 +1822,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "test_load_deliversNoImagesOnSevenDaysOldCache()"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "test_load_deliversNoImagesOnExpiredCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1934,9 +1838,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "test_load_deliversNoImagesOnSevenDaysOldCache()"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "test_load_deliversNoImagesOnExpiredCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1950,25 +1854,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "test_load_deliversNoImagesOnSevenDaysOldCache()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2BA8D07E-6F80-4A10-9A6E-FA024C06903A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "test_load_deliversNoImagesOnSevenDaysOldCache()"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "test_load_deliversNoImagesOnExpiredCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1982,9 +1870,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "test_load_deliversCachedImagesOnLessThanSevenDaysOldCache()"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "test_load_deliversCachedImagesOnNonExpiredCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1998,9 +1886,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "test_load_deliversCachedImagesOnLessThanSevenDaysOldCache()"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "test_load_deliversCachedImagesOnNonExpiredCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2014,41 +1902,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "test_load_deliversCachedImagesOnLessThanSevenDaysOldCache()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B9B0441E-13BB-4561-A3DF-16E0B28809EF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "test_load_deliversCachedImagesOnLessThanSevenDaysOldCache()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8659C087-844A-4433-84BA-1B0ED99CA775"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "test_load_deliversCachedImagesOnLessThanSevenDaysOldCache()"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "test_load_deliversCachedImagesOnNonExpiredCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2254,8 +2110,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "makeSUT(currentDate:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2270,8 +2126,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "makeSUT(currentDate:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2286,8 +2142,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2302,8 +2158,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2318,8 +2174,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2334,8 +2190,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2350,8 +2206,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "expect(_:toCompleteWith:when:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3262,8 +3118,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "test_load_hasNoSideEffectsOnRetrievalError()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3278,8 +3134,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "test_load_hasNoSideEffectsOnRetrievalError()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3294,8 +3150,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "test_load_hasNoSideEffectsOnRetrievalError()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3310,8 +3166,8 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "test_load_hasNoSideEffectsOnRetrievalError()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3326,9 +3182,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "test_load_hasNoSideEffectsOnCacheExpiration()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3342,9 +3198,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "test_load_hasNoSideEffectsOnCacheExpiration()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3358,9 +3214,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "test_load_hasNoSideEffectsOnCacheExpiration()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3374,9 +3230,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "test_load_hasNoSideEffectsOnCacheExpiration()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3390,9 +3246,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "test_load_hasNoSideEffectsOnCacheExpiration()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3406,9 +3262,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "test_load_hasNoSideEffectsOnCacheExpiration()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3422,9 +3278,9 @@
             filePath = "EssentialFeedTests/Feed Cache/LoadFeedFromCacheUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "test_load_hasNoSideEffectsOnLessThanSevenDayOldCache()"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "test_load_hasNoSideEffectsOnCacheExpiration()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

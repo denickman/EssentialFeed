@@ -200,10 +200,10 @@
 		8545CD512CBBDE14002F4521 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				85835D782CBD2AF200CA082C /* SharedTestHelpers.swift */,
-				8545CD542CBBDE1E002F4521 /* README.md */,
-				8545CD572CBBDE8F002F4521 /* FeedStoreSpy.swift */,
 				85835D762CBD28C100CA082C /* FeedCacheTestHelpers.swift */,
+				85835D782CBD2AF200CA082C /* SharedTestHelpers.swift */,
+				8545CD572CBBDE8F002F4521 /* FeedStoreSpy.swift */,
+				8545CD542CBBDE1E002F4521 /* README.md */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
