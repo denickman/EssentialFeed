@@ -10,11 +10,16 @@ import EssentialFeed
 
 class ValidateFeedCacheUseCaseTests: XCTestCase {
     
+    // Эти тесты проверяют логику валидации кеша, то есть удаления устаревшего или некорректного кеша.
+    
+    
+    // проверяет, что при создании SUT не отправляются сообщения в хранилище.
     func test_init_doesNotMessageStoreUponCreation() {
         let (_, store) = makeSUT()
         XCTAssertEqual(store.receivedMessages,  [])
     }
     
+    // проверяет, что при ошибке извлечения кеша он удаляется.
     func test_validateCache_deleteCacheOnRetrievalError() {
         let (sut, store) = makeSUT()
         sut.validateCache()
@@ -22,6 +27,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.retrieve, .deleteCacheFeed])
     }
     
+    // проверяет, что пустой кеш не удаляется.
     func test_validateCache_doesNotDeleteCacheOnEmptyCache() {
         let (sut, store) = makeSUT()
         sut.validateCache()
@@ -29,6 +35,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
+    // проверяет, что неистекший кеш не удаляется.
     func test_validateCache_doesNotDeleteExpiredCache() {
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
@@ -40,6 +47,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
+    //  проверяет, что кеш удаляется при истечении срока действия.
     func test_validateCache_deletesCacheOnExpiration() {
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
@@ -51,10 +59,11 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.retrieve, .deleteCacheFeed])
     }
     
+    //  проверяет, что истекший кеш удаляется.
     func test_validate_deletesExpiredCache() {
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
-        let expiredTimestamp = fixedCurrentDate.adding(days: -7).adding(seconds: -1)
+        let expiredTimestamp = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: -1)
         let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
         
         sut.validateCache()
@@ -62,6 +71,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.retrieve, .deleteCacheFeed])
     }
     
+    // проверяет, что кеш не удаляется, если SUT был деинициализирован.
     func test_validateCache_doesNotDeleteInvalidCacheAfterSUTInstanceHasBeenDeallocated() {
         let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)

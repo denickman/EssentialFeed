@@ -10,17 +10,20 @@ import EssentialFeed
 
 final class LoadFeedFromCacheUseCaseTests: XCTestCase {
     
+    // проверяет, что при создании SUT не отправляются сообщения в хранилище.
     func test_init() {
         let (_, store) = makeSUT()
         XCTAssertEqual(store.receivedMessages, [])
     }
     
+    //  проверяет, что при загрузке запрашивается извлечение данных из кеша.
     func test_load_requestsCacheRetrieval() {
         let (sut, store) = makeSUT()
         sut.load() { _ in }
         XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
+    //  проверяет, что загрузка завершается с ошибкой при неудачном извлечении кеша.
     func test_load_failsOnRetrievalError() {
         let (sut, store) = makeSUT()
         let retrievalError = anyNSError()
@@ -30,6 +33,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         })
     }
     
+    // проверяет, что при пустом кеше не возвращаются изображения.
     func test_load_deliversNoImagesOnEmptyCache() {
         let (sut, store) = makeSUT()
         
@@ -38,6 +42,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         })
     }
     
+    //  проверяет, что при неистекшем кеше возвращаются закешированные изображения.
     func test_load_deliversCachedImagesOnNonExpiredCache() {
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
@@ -50,6 +55,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         })
     }
     
+    //  проверяет, что кеш, которому ровно 7 дней, не возвращает изображения.
     func test_load_deliversNoImagesOnSevenDaysOldCache() {
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
@@ -62,6 +68,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         })
     }
     
+    // проверяет, что истекший кеш не возвращает изображения.
     func test_load_deliversNoImagesOnExpiredCache() {
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
@@ -74,7 +81,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         })
     }
     
-    
+    //  проверяет, что при ошибке извлечения кеша нет побочных эффектов.
     func test_load_hasNoSideEffectsOnRetrievalError() {
         let (sut, store) = makeSUT()
         sut.load { _ in }
@@ -82,6 +89,8 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
+    
+    //  проверяет, что при пустом кеше нет побочных эффектов.
     func test_load_hasNoSideEffectsOnEmptyCache() {
         let (sut, store) = makeSUT()
         sut.load { _ in }
@@ -91,7 +100,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
     
     
     
-    
+    // проверяет, что при истекшем кеше нет побочных эффектов.
     func test_load_hasNoSideEffectsOnCacheExpiration() {
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
@@ -103,10 +112,11 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
+    //  проверяет, что при загрузке истекшего кеша нет побочных эффектов.
     func test_load_hasNoSideEffectsOnExpiredCache() {
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
-        let expiredTimestamp = fixedCurrentDate.minusFeedCacheMaxAge().adding(days: -7)
+        let expiredTimestamp = fixedCurrentDate.minusFeedCacheMaxAge()
         let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
         
         sut.load { _ in }
@@ -114,11 +124,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
-    
-    
-    
-    
-    
+    //  проверяет, что результат не доставляется, если экземпляр SUT был деинициализирован.
     func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
         let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
@@ -131,10 +137,7 @@ final class LoadFeedFromCacheUseCaseTests: XCTestCase {
         
         XCTAssertTrue(receivedResults.isEmpty)
     }
-    
-    
-     
-    
+ 
     // MARK: - Helpers
     
     private func makeSUT(
