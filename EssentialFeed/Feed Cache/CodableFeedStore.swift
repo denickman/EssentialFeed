@@ -36,11 +36,17 @@ public class CodableFeedStore: FeedStore {
         }
     }
     
+    // MARK: - Properties
+    
     private let storeURL: URL
     
-    init(storeURL: URL) {
+    // MARK: - Init
+    
+    public init(storeURL: URL) {
         self.storeURL = storeURL
     }
+    
+    // MARK: - Methods
     
     public func retrieve(completion: @escaping RetrievalCompletion) {
         guard let data = try? Data(contentsOf: storeURL) else {

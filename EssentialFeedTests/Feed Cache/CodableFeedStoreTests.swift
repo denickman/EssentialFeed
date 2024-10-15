@@ -7,6 +7,9 @@
 
 import XCTest
 import EssentialFeed
+
+
+/// Тесты проверяют корректность работы кэширования в хранилище данных. Они охватывают три основные операции: получение данных (retrieve), вставка данных (insert) и удаление данных (delete). Вот что проверяет каждый тест:
  
 /// - Retrieve
 /// 1. Emtpy cache returns empty
@@ -52,11 +55,13 @@ class CodableFeedStoreTests: XCTestCase {
         try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
     
+    // Проверяет, что если кэш пустой, метод retrieve вернет пустой результат.
     func test_retrieve_deliversEmptyOnEmtpyCache() {
         let sut = makeSUT()
         expect(sut, toRetrieve: .empty)
     }
     
+    // Убеждается, что получение данных из пустого кэша не приводит к изменениям в состоянии кэша.
     func test_retrieve_hasNoSideEffectsOnEmtpyCache() {
         let sut = makeSUT()
         let feed = uniqueImageFeed().local
@@ -66,6 +71,8 @@ class CodableFeedStoreTests: XCTestCase {
         expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp))
     }
     
+    
+    //  Проверяет, что при наличии данных в кэше метод retrieve вернет корректные данные.
     func test_retrieve_deliversFoundValuesOnNonEmptyCache() {
         let sut = makeSUT()
         let feed = uniqueImageFeed().local
@@ -75,11 +82,13 @@ class CodableFeedStoreTests: XCTestCase {
         expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp))
     }
     
+    // Убеждается, что повторное получение данных из непустого кэша возвращает те же данные без побочных эффектов.
     func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {
         let sut = makeSUT()
         expect(sut, toRetrieveTwice: .empty)
     }
     
+    // Проверяет, что при ошибке (например, поврежденные данные) метод retrieve возвращает ошибку.
     func test_retrieve_deliversFailureOnRetrievalError() {
         let storeURL = testSpecificStoreURL()
         let sut = makeSUT(storeURL: storeURL)
@@ -89,6 +98,7 @@ class CodableFeedStoreTests: XCTestCase {
         expect(sut, toRetrieve: .failure(anyNSError()))
     }
     
+    // Убеждается, что повторное получение данных после ошибки возвращает ту же ошибку без побочных эффектов.
     func test_retrieve_hasNoSideEffectsOnFailure() {
         let storeURL = testSpecificStoreURL()
         let sut = makeSUT(storeURL: storeURL)
@@ -98,7 +108,7 @@ class CodableFeedStoreTests: XCTestCase {
         expect(sut, toRetrieveTwice: .failure(anyNSError()))
     }
     
-    
+    // Проверяет, что вставка новых данных в непустой кэш перезаписывает существующие данные.
     func test_insert_overridesPreviouslyInsertedCacheValues() {
         let sut = makeSUT()
         
@@ -113,6 +123,7 @@ class CodableFeedStoreTests: XCTestCase {
         expect(sut, toRetrieve: .found(feed: latestFeed, timestamp: latestTimestamp))
     }
     
+    // Проверяет, что при ошибке (например, неправильный URL) вставка данных возвращает ошибку.
     func test_insert_deliversErrorOnInsertionError() {
         let invalidStoreURL = URL(string: "invalid://store-url")!
         let sut = makeSUT(storeURL: invalidStoreURL)
@@ -124,6 +135,7 @@ class CodableFeedStoreTests: XCTestCase {
         XCTAssertNotNil(insertionError, "Expected cache insertion to fail with an error")
     }
     
+    //  Проверяет, что удаление данных из пустого кэша не вызывает ошибок и не изменяет состояние кэша.
     func test_delete_hasNoSideEffectsOnEmptyCache() {
         let sut = makeSUT()
         let deletionError = deleteCache(from: sut)
@@ -138,6 +150,7 @@ class CodableFeedStoreTests: XCTestCase {
         expect(sut, toRetrieve: .empty)
     }
     
+    // Проверяет, что после удаления данных из непустого кэша кэш становится пустым.
     func test_delete_emptiesPreviouslyInsertedCache() {
         let sut = makeSUT()
         insert((uniqueImageFeed().local, Date()), to: sut)
@@ -152,6 +165,7 @@ class CodableFeedStoreTests: XCTestCase {
         expect(sut, toRetrieve: .empty)
     }
     
+    // Проверяет, что при ошибке (например, нет прав на удаление) удаление данных возвращает ошибку.
     func test_delete_deliversErrorOnDeletionError() {
         let noDeletePermissionURL = cachesDirectory()
         let sut = makeSUT(storeURL: noDeletePermissionURL)
@@ -161,9 +175,7 @@ class CodableFeedStoreTests: XCTestCase {
         XCTAssertNotNil(deletionError, "Expected cache deletion to fail")
         expect(sut, toRetrieve: .empty)
     }
-    
-    
-    
+
     
     // MARK: - Helpers
     
