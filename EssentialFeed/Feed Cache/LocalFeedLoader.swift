@@ -26,17 +26,24 @@ extension LocalFeedLoader {
     
     public typealias SaveResult = Error?
     
+    //  Эта функция отвечает за сохранение нового списка изображений (feed) в кеш.
     public func save(_ feed: [FeedImage], completion: @escaping (SaveResult) -> Void) {
+        // Сначала удаляет старый кеш, вызывая метод deleteCachedFeed у FeedStore.
+        // удаляет предыдущие кешированные данные, прежде чем сохранить новые.
+
         store.deleteCachedFeed { [weak self] error in
             guard let self else { return }
             if let cacheDeletionError = error {
+               // Если при удалении кеша произошла ошибка, она передается через замыкание completion.
                 completion(cacheDeletionError)
             } else {
+                // Если ошибок нет, вызывается приватный метод cache для сохранения нового списка изображений в хранилище.
                 self.cache(feed, with: completion)
             }
         }
     }
     
+    // функция, которая непосредственно выполняет вставку новых данных в кеш.
     private func cache(_ feed: [FeedImage], with completion: @escaping (SaveResult) -> Void) {
         store.insert(
             feed.toLocal(),
@@ -58,12 +65,15 @@ extension LocalFeedLoader: FeedLoader {
             guard let self else { return }
             
             switch result {
+                // Если кеш найден и его данные валидны (проверяется через политику FeedCachePolicy.validate), возвращает данные через completion(.success(...)).
             case let .found(feed, timestamp) where FeedCachePolicy.validate(timestamp, against: self.currentDate()):
                 completion(.success(feed.toModels()))
                 
+                // Если произошла ошибка при извлечении кеша, передает её через completion(.failure(...)).
             case let .failure(error):
                 completion(.failure(error))
                 
+                // Если кеш пуст или данные устарели, возвращает пустой массив (completion(.success([]))).
             case .found, .empty:
                 completion(.success([]))
             }
@@ -72,16 +82,21 @@ extension LocalFeedLoader: FeedLoader {
 }
 
 extension LocalFeedLoader {
+    
+    // Эта функция отвечает за проверку действительности кеша и его удаление, если данные устарели или произошла ошибка.
     public func validateCache() {
         store.retrieve { [weak self] result in
             guard let self else { return }
             switch result {
             case .failure:
+                // Если произошла ошибка при извлечении, кеш удаляется.
                 self.store.deleteCachedFeed { _ in }
                 
+                // Если кеш найден, но его время истекло (проверяется с помощью FeedCachePolicy.validate), кеш также удаляется.
             case let .found(_, timestamp) where !FeedCachePolicy.validate(timestamp, against: self.currentDate()):
                 self.store.deleteCachedFeed { _ in }
                 
+                // сли кеш пуст или действителен, ничего не происходит.
             case .empty, .found: break
             }
         }

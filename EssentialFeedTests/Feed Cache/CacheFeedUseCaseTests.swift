@@ -13,24 +13,24 @@ enum Result {
     case failure(Error)
 }
 
+// Эти тесты проверяют правильность работы use case для кэширования фида (CacheFeedUseCase)
+
 final class CacheFeedUseCaseTests: XCTestCase {
-    
-    
-    // Тест проверяет, что при создании экземпляра LocalFeedLoader не отправляется никаких сообщений в хранилище (FeedStoreSpy).
+        
+    // Этот тест проверяет, что при создании экземпляра LocalFeedLoader не отправляются никакие сообщения в FeedStoreSpy. То есть проверяется, что объект инициализируется корректно и не выполняет лишних действий (например, не взаимодействует с хранилищем данных при создании).
     func test_init_doesNotMessageStoreUponCreation() {
         let (_, store) = makeSUT()
         XCTAssertEqual(store.receivedMessages, [])
     }
     
-    // Тест проверяет, что при вызове метода save, перед тем как сохранить новые данные, удаляется предыдущий кеш
+    // Этот тест проверяет, что при вызове метода save (сохранение нового фида) сначала запрашивается удаление предыдущего кеша через сообщение .deleteCacheFeed. Перед тем как сохранить новые данные, всегда сначала нужно удалить старый кеш.
     func test_save_requestCacheDeletion() {
         let (sut, store) = makeSUT()
         sut.save(uniqueImageFeed().models) { _ in }
         XCTAssertEqual(store.receivedMessages, [.deleteCacheFeed])
     }
     
-    
-    // Если удаление кеша завершилось с ошибкой, метод save не должен пытаться вставить новый фид.
+    // Тест проверяет, что если удаление кеша завершилось с ошибкой, система не пытается вставить новый фид в кеш. То есть если удаление старых данных не удалось, дальнейшая работа должна остановиться.
     func test_save_doesNotRequestCacheInsertionOnDeletionError() {
         let (sut, store) = makeSUT()
         let deletionError = anyNSError()
@@ -41,7 +41,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.deleteCacheFeed])
     }
     
-    //  Если удаление кеша прошло успешно, нужно вставить новый кеш с текущей меткой времени.
+    //  Этот тест проверяет, что если удаление кеша прошло успешно, должен вставляться новый фид с текущей меткой времени. Метод save сначала удаляет старый кеш, а затем вставляет новые данные.
     func test_save_requestsNewCacheInsertionWithTimestampOnSuccesfulDeletion() {
         let timestamp = Date()
         
@@ -54,7 +54,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.deleteCacheFeed, .insert(feed.local, timestamp)])
     }
     
-    // Эти 2 теста проверяют, что сохранение завершится ошибкой, если во время удаления или вставки произошла ошибка.
+    // Тест проверяет, что если при удалении кеша произошла ошибка, метод save завершится с этой ошибкой и не выполнит сохранение.
     func test_save_failsOnDeletionError() {
         let (sut, store) = makeSUT()
         let deletionError = anyNSError()
@@ -64,6 +64,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         }
     }
     
+    // Этот тест проверяет, что если при вставке нового фида произошла ошибка, метод save также завершится ошибкой. Даже если удаление кеша прошло успешно, ошибка на этапе вставки должна обрабатываться.
     func test_save_failsOnInsertionError() {
         let (sut, store) = makeSUT()
         let insertionError = anyNSError()
@@ -74,7 +75,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         }
     }
     
-    // Проверяется успешное сохранение фида в случае успешного удаления и вставки.
+    // Тест проверяет, что если и удаление старого кеша, и вставка нового фида прошли успешно, метод save завершится успешно.
     func test_save_succeedsOnSuccessfulCacheInsertion() {
         let (sut, store) = makeSUT()
         
@@ -84,7 +85,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         }
     }
     
-    // Тест проверяет, что после удаления экземпляра LocalFeedLoader не должно быть доставки ошибок, связанных с удалением кеша.
+    // Этот тест проверяет, что если объект LocalFeedLoader был деинициализирован, ошибки удаления кеша не должны быть доставлены. Это важно для предотвращения утечек памяти или ненужных операций после освобождения объекта.
     func test_save_doesNotDeliverDeletionError_afterSUTInstanceHasBeenDeallocated() {
         let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
@@ -100,7 +101,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         XCTAssertTrue(receivedResults.isEmpty)
     }
     
-    // Аналогичный тест для ошибки вставки после деинициализации LocalFeedLoader.
+    // Аналогичный предыдущему тест, но проверяется, что ошибки вставки фида не доставляются, если объект LocalFeedLoader был деинициализирован. Это гарантирует, что работа прекращается после деинициализации объекта, и ошибки не передаются.
     func test_save_doesNotDeliverInsertionError_afterSUTInstanceHasBeenDeallocated() {
         let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
