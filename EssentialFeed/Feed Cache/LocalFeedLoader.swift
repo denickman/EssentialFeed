@@ -30,11 +30,11 @@ extension LocalFeedLoader {
     public func save(_ feed: [FeedImage], completion: @escaping (SaveResult) -> Void) {
         // Сначала удаляет старый кеш, вызывая метод deleteCachedFeed у FeedStore.
         // удаляет предыдущие кешированные данные, прежде чем сохранить новые.
-
+        
         store.deleteCachedFeed { [weak self] error in
             guard let self else { return }
             if let cacheDeletionError = error {
-               // Если при удалении кеша произошла ошибка, она передается через замыкание completion.
+                // Если при удалении кеша произошла ошибка, она передается через замыкание completion.
                 completion(cacheDeletionError)
             } else {
                 // Если ошибок нет, вызывается приватный метод cache для сохранения нового списка изображений в хранилище.
