@@ -99,7 +99,7 @@ class CodableFeedStoreTests: XCTestCase {
     // 1. Emtpy cache returns empty
     func test_retrieve_deliversEmptyOnEmtpyCache() {
         
-        let sut = CodableFeedStore()
+        let sut = makeSUT()
         let exp = expectation(description: "Wait for cache retrieval")
         
         sut.retrieve { result in
@@ -119,7 +119,7 @@ class CodableFeedStoreTests: XCTestCase {
     // 2. Non-empty cache returns empty (no side-effects)
     func test_retrieve_hasNoSideEffectsOnEmtpyCache() {
         
-        let sut = CodableFeedStore()
+        let sut = makeSUT()
         let exp = expectation(description: "Wait for cache retrieval")
         
         sut.retrieve { firstResult in
@@ -140,7 +140,7 @@ class CodableFeedStoreTests: XCTestCase {
     
     func test_retrieveAfterInsertingToEmptyCache_deliversInsertedValues() {
         
-        let sut = CodableFeedStore()
+        let sut = makeSUT()
         let feed = uniqueImageFeed().local
         let timestamp = Date()
         let exp = expectation(description: "Wait for cache retrieval")
@@ -163,6 +163,12 @@ class CodableFeedStoreTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
+    
+    // MARK: - Helpers
+    
+    private func makeSUT() -> CodableFeedStore {
+        CodableFeedStore()
+    }
     
     
 }
