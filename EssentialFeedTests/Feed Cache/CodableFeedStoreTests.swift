@@ -99,7 +99,7 @@ class CodableFeedStoreTests: XCTestCase {
     // 1. Emtpy cache returns empty
     func test_retrieve_deliversEmptyOnEmtpyCache() {
         
-        let sut = makeSUT()
+        let sut = makeSUT() 
         let exp = expectation(description: "Wait for cache retrieval")
         
         sut.retrieve { result in
@@ -166,9 +166,10 @@ class CodableFeedStoreTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT() -> CodableFeedStore {
-        CodableFeedStore()
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> CodableFeedStore {
+        let sut = CodableFeedStore()
+        trackForMemoryLeaks(sut, file: file, line: line)
+        return sut
     }
-    
-    
+
 }
