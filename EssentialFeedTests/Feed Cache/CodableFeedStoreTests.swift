@@ -22,7 +22,6 @@ import EssentialFeed
  2. To non-empty cache overrides previous data with new data
  3. Error (if applicable, e.g., no write permission)
  
- 
  - Delete:
  1. Empty cache does nothing (cache stays empty and does not fail)
  2. Non-empty cache leaves cache emtpy
@@ -110,7 +109,6 @@ class CodableFeedStoreTests: XCTestCase {
         try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
     
-    // 1. Emtpy cache returns empty
     func test_retrieve_deliversEmptyOnEmtpyCache() {
         
         let sut = makeSUT()
@@ -130,7 +128,6 @@ class CodableFeedStoreTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    // 2. Non-empty cache returns empty (no side-effects)
     func test_retrieve_hasNoSideEffectsOnEmtpyCache() {
         
         let sut = makeSUT()
@@ -153,7 +150,6 @@ class CodableFeedStoreTests: XCTestCase {
     }
     
     func test_retrieveAfterInsertingToEmptyCache_deliversInsertedValues() {
-        
         let sut = makeSUT()
         let feed = uniqueImageFeed().local
         let timestamp = Date()
@@ -173,6 +169,37 @@ class CodableFeedStoreTests: XCTestCase {
                 
                 exp.fulfill()
             }
+        }
+        wait(for: [exp], timeout: 1.0)
+    }
+    
+    func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {
+        let sut = makeSUT()
+        let feed = uniqueImageFeed().local
+        let timestamp = Date()
+        let exp = expectation(description: "Wait for cache retrieval")
+        
+        sut.insert(feed, timestamp: timestamp) { insertionError in
+            XCTAssertNil(insertionError, "Expected feed to be inserted successfully")
+            
+            sut.retrieve { firstResult in
+                sut.retrieve { secondResult in
+                    switch (firstResult, secondResult) {
+                        
+                    case let (.found(first), .found(second)):
+                        XCTAssertEqual(first.feed, feed)
+                        XCTAssertEqual(first.timestamp, timestamp)
+                        
+                        XCTAssertEqual(second.feed, feed)
+                        XCTAssertEqual(second.timestamp, timestamp)
+                        
+                    default:
+                        XCTFail("Expected retrieving twice from non empty cache to deliver same found result with feed \(feed) and timestamp \(timestamp), got \(firstResult) and \(secondResult) instead")
+                    }
+                    
+                    exp.fulfill()
+                }
+            }    
         }
         wait(for: [exp], timeout: 1.0)
     }
