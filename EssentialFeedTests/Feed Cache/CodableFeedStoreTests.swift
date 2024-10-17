@@ -8,30 +8,7 @@
 import XCTest
 import EssentialFeed
 
-
-/// Тесты проверяют корректность работы кэширования в хранилище данных. Они охватывают три основные операции: получение данных (retrieve), вставка данных (insert) и удаление данных (delete). Вот что проверяет каждый тест:
- 
-/// - Retrieve
-/// 1. Emtpy cache returns empty
-/// 2. Non-empty cache returns empty (no side-effects)
-/// 3. Non-emtpy cache twice returns same data (no side-effects)
-/// 4. Error returns error (if applicable, e.g., invalid data)
-/// 5. Error twice returns same error  (if applicable, e.g., invalid data)
-///
-/// - Insert
-/// 1. To empty cache stores dat
-/// 2. To non-empty cache overrides previous data with new data
-/// 3. Error (if applicable, e.g., no write permission)
-///
-/// - Delete:
-/// 1. Empty cache does nothing (cache stays empty and does not fail)
-/// 2. Non-empty cache leaves cache emtpy
-/// 3. Error (if applicable, e.g., no delete permission)
-///
-/// - Side-effect must run serially to avoid race-conditions
- 
-
-class CodableFeedStoreTests: XCTestCase {
+class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
     
     override func setUp() {
         super.setUp()
@@ -55,13 +32,12 @@ class CodableFeedStoreTests: XCTestCase {
         try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
     
-    // Проверяет, что если кэш пустой, метод retrieve вернет пустой результат.
     func test_retrieve_deliversEmptyOnEmtpyCache() {
         let sut = makeSUT()
         expect(sut, toRetrieve: .empty)
     }
     
-    // Убеждается, что получение данных из пустого кэша не приводит к изменениям в состоянии кэша.
+    /// Этот тест проверяет, что при вставке данных в пустое хранилище, их последующее извлечение возвращает корректные данные без изменения состояния кэша. Тест проверяет, что хранилище сохраняет вставленные данные и возвращает их без побочных эффектов.
     func test_retrieve_hasNoSideEffectsOnEmtpyCache() {
         let sut = makeSUT()
         let feed = uniqueImageFeed().local
@@ -71,137 +47,129 @@ class CodableFeedStoreTests: XCTestCase {
         expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp))
     }
     
-    
-    //  Проверяет, что при наличии данных в кэше метод retrieve вернет корректные данные.
+    /// Этот тест проверяет, что если кэш содержит данные, то метод retrieve должен вернуть эти данные. В начале теста данные сохраняются в кэш, затем вызывается метод retrieve, и проверяется, что он возвращает сохранённые ранее данные.
     func test_retrieve_deliversFoundValuesOnNonEmptyCache() {
         let sut = makeSUT()
-        let feed = uniqueImageFeed().local
-        let timestamp = Date()
-        
-        insert((feed, timestamp), to: sut)
-        expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp))
+        assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
     }
     
-    // Убеждается, что повторное получение данных из непустого кэша возвращает те же данные без побочных эффектов.
+    /// Этот тест проверяет, что повторные вызовы метода retrieve на непустом кэше не изменяют его содержимое. То есть, если кэш содержит какие-то данные, то вызов метода retrieve несколько раз должен возвращать одни и те же данные без их изменения.
     func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {
         let sut = makeSUT()
-        expect(sut, toRetrieveTwice: .empty)
+        assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: sut)
     }
     
-    // Проверяет, что при ошибке (например, поврежденные данные) метод retrieve возвращает ошибку.
+    /// Этот тест проверяет, что если данные в хранилище повреждены или находятся в неверном формате, метод retrieve возвращает ошибку. Для этого в хранилище записываются невалидные данные (строка "invalid data"), после чего вызывается метод получения данных, и проверяется, что была возвращена ошибка.
     func test_retrieve_deliversFailureOnRetrievalError() {
         let storeURL = testSpecificStoreURL()
         let sut = makeSUT(storeURL: storeURL)
         
         try! "invalid data".write(to: storeURL, atomically: false, encoding: .utf8)
         
-        expect(sut, toRetrieve: .failure(anyNSError()))
+        assertThatRetrieveHasNoSideEffectsOnFailure(on: sut)
     }
     
-    // Убеждается, что повторное получение данных после ошибки возвращает ту же ошибку без побочных эффектов.
+    /// Этот тест проверяет, что если при получении данных произошла ошибка (например, из-за невалидных данных в хранилище), то последующие вызовы метода retrieve возвращают ту же ошибку, и состояние хранилища не изменяется. Снова используется невалидное состояние хранилища (записываются "invalid data"), и проверяется, что после получения ошибки повторный вызов retrieve не изменяет состояние кэша.
     func test_retrieve_hasNoSideEffectsOnFailure() {
         let storeURL = testSpecificStoreURL()
         let sut = makeSUT(storeURL: storeURL)
         
         try! "invalid data".write(to: storeURL, atomically: false, encoding: .utf8)
         
-        expect(sut, toRetrieveTwice: .failure(anyNSError()))
+        assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
     }
     
-    // Проверяет, что вставка новых данных в непустой кэш перезаписывает существующие данные.
+    /// Этот тест проверяет, что вставка данных в пустой кэш выполняется без ошибок. Он вызывает метод insert на пустом кэше и ожидает успешное завершение без каких-либо ошибок.
+    func test_insert_deliversNoErrorOnEmptyCache() {
+        let sut = makeSUT()
+        assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
+    }
+    
+    /// Этот тест проверяет, что вставка данных в уже непустой кэш также выполняется без ошибок. То есть, даже если кэш содержит данные, новые данные могут быть успешно вставлены, и это не приведёт к ошибкам.
+    func test_insert_deliversNoErrorOnNonEmptyCache() {
+        let sut = makeSUT()
+        assertThatInsertDeliversNoErrorOnNonEmptyCache(on: sut)
+    }
+    
+    /// Этот тест проверяет, что при вставке новых данных в кэш предыдущие данные перезаписываются. Сначала в кэш вставляются одни данные, а затем новые данные. После чего вызывается метод retrieve, и проверяется, что возвращены были новые данные.
     func test_insert_overridesPreviouslyInsertedCacheValues() {
         let sut = makeSUT()
-        
-        let firstInsertionError = insert((uniqueImageFeed().local, Date()), to: sut)
-        XCTAssertNil(firstInsertionError, "Expected to insert cache successfully")
-        
-        let latestFeed = uniqueImageFeed().local
-        let latestTimestamp = Date()
-        let latestInsetionError = insert((latestFeed, latestTimestamp), to: sut)
-        
-        XCTAssertNil(latestInsetionError, "Expected to override cache successfully")
-        expect(sut, toRetrieve: .found(feed: latestFeed, timestamp: latestTimestamp))
+        assertThatInsertOverridesPreviouslyInsertedCacheValues(on: sut)
     }
     
-    // Проверяет, что при ошибке (например, неправильный URL) вставка данных возвращает ошибку.
+    
+    /// Этот тест проверяет, что если при попытке вставки данных произошла ошибка, метод insert возвращает ошибку. Для этого используется invalidStoreURL, который является недействительным URL. При вызове метода вставки в это место ожидается ошибка, так как данные не могут быть записаны в недействительное хранилище.
     func test_insert_deliversErrorOnInsertionError() {
         let invalidStoreURL = URL(string: "invalid://store-url")!
         let sut = makeSUT(storeURL: invalidStoreURL)
-        
-        let feed = uniqueImageFeed().local
-        let timestamp = Date()
-        let insertionError = insert((feed, timestamp), to: sut)
-        
-        XCTAssertNotNil(insertionError, "Expected cache insertion to fail with an error")
+        assertThatInsertDeliversErrorOnInsertionError(on: sut)
     }
     
-    //  Проверяет, что удаление данных из пустого кэша не вызывает ошибок и не изменяет состояние кэша.
-    func test_delete_hasNoSideEffectsOnEmptyCache() {
+    
+    // Проверить, что при возникновении ошибки вставки данных в хранилище кэш остаётся неизменным и не имеет побочных эффектов
+    func test_insert_hasNoSideEffectsOnInsertionError() {
+        let invalidStoreURL = URL(string: "invalid://store-url")!
+        let sut = makeSUT(storeURL: invalidStoreURL)
+        assertThatInsertHasNoSideEffectsOnInsertionError(on: sut)
+    }
+    
+    
+    /// Этот тест проверяет, что вызов метода delete на пустом кэше не вызывает ошибок. То есть, даже если кэш пуст, метод delete должен завершаться успешно, без ошибок
+    func test_delete_deliversNoErrorOnEmptyCache() {
         let sut = makeSUT()
-        let deletionError = deleteCache(from: sut)
-        let exp = expectation(description: "Wait for cache deletion")
-        
-        sut.deleteCachedFeed { deletionError in
-            XCTAssertNil(deletionError, "Expected empty cache deletion to succeed")
-            exp.fulfill()
-        }
-        wait(for: [exp], timeout: 1.0)
-        XCTAssertNil(deletionError, "Expected empty cache deletion to succeed")
-        expect(sut, toRetrieve: .empty)
+        assertThatDeleteDeliversNoErrorOnEmptyCache(on: sut)
     }
     
-    // Проверяет, что после удаления данных из непустого кэша кэш становится пустым.
+    /// Этот тест проверяет, что вызов метода delete на непустом кэше также не вызывает ошибок. Это означает, что даже если в кэше есть данные, их удаление должно проходить без ошибок
+    func test_delete_deliversNoErrorOnNonEmptyCache() {
+        let sut = makeSUT()
+        assertThatDeleteDeliversNoErrorOnNonEmptyCache(on: sut)
+    }
+    
+    
+    /// Этот тест проверяет, что вызов метода delete очищает кэш, который содержал данные. Сначала в кэш вставляются данные, а затем они удаляются, после чего проверяется, что кэш действительно стал пустым
     func test_delete_emptiesPreviouslyInsertedCache() {
         let sut = makeSUT()
-        insert((uniqueImageFeed().local, Date()), to: sut)
-        let deletionError = deleteCache(from: sut)
-        let exp = expectation(description: "Wait for cache deletion")
-        sut.deleteCachedFeed { deletionError in
-            XCTAssertNil(deletionError, "Expected non-empty cache deletion to succeed")
-            exp.fulfill()
-        }
-        wait(for: [exp], timeout: 1.0)
-        XCTAssertNil(deletionError, "Expected non-empty cache deletion to succeed")
-        expect(sut, toRetrieve: .empty)
+        assertThatDeleteEmptiesPreviouslyInsertedCache(on: sut)
     }
     
-    // Проверяет, что при ошибке (например, нет прав на удаление) удаление данных возвращает ошибку.
+    /// Этот тест проверяет, что если произошла ошибка при удалении данных из хранилища, то метод delete возвращает ошибку. Для симуляции ошибки используется noDeletePermissionURL, который представляет собой URL директории, к которой у приложения нет прав на удаление. Тест вызывает метод удаления и ожидает, что будет возвращена ошибка.
     func test_delete_deliversErrorOnDeletionError() {
         let noDeletePermissionURL = cachesDirectory()
         let sut = makeSUT(storeURL: noDeletePermissionURL)
-        
-        let deletionError = deleteCache(from: sut)
-        
-        XCTAssertNotNil(deletionError, "Expected cache deletion to fail")
-        expect(sut, toRetrieve: .empty)
+        assertThatDeleteDeliversErrorOnDeletionError(on: sut)
     }
     
+    /// Этот тест проверяет, что если произошла ошибка при удалении данных из хранилища, то состояние кэша не должно измениться. Снова используется noDeletePermissionURL для симуляции ошибки. Тест проверяет, что после вызова метода удаления, несмотря на ошибку, кэш остаётся в том же состоянии, что и до удаления (без побочных эффектов).
+    func test_delete_hasNoSideEffectsOnDeletionError() {
+        let noDeletePermissionURL = cachesDirectory()
+        let sut = makeSUT(storeURL: noDeletePermissionURL)
+        assertThatDeleteHasNoSideEffectsOnDeletionError(on: sut)
+    }
+    
+    /// Этот тест проверяет, что все операции с кэшем (вставка, удаление и получение данных) выполняются последовательно, одна за другой, без одновременного выполнения. Это важно для поддержания целостности данных в условиях многопоточности.
     func test_storeSideEffects_runSerially() {
         let sut = makeSUT()
-        
-        var comletedOperationsInOrder = [XCTestExpectation]()
-            
-        let op1 = expectation(description: "Operation 1")
-        sut.insert(uniqueImageFeed().local, timestamp: Date()) { _ in
-            comletedOperationsInOrder.append(op1)
-            op1.fulfill()
-        }
-        
-        let op2 = expectation(description: "Operation 2")
-        sut.deleteCachedFeed { _ in
-            comletedOperationsInOrder.append(op2)
-            op2.fulfill()
-        }
-        
-        let op3 = expectation(description: "Operation 3")
-        sut.insert(uniqueImageFeed().local, timestamp: Date()) { _ in
-            comletedOperationsInOrder.append(op3)
-            op3.fulfill()
-        }
-        
-        waitForExpectations(timeout: 5.0)
-        
-        XCTAssertEqual(comletedOperationsInOrder, [op1, op2, op3], "Expected side-effects to run serially but operations finished in the wrong order")
+        assertThatSideEffectsRunSerially(on: sut)
+    }
+    
+    /// Этот тест проверяет, что если мы пытаемся получить кэшированные данные из пустого кэша (где ранее ничего не было сохранено), то результат будет пустым. Он эмулирует вызов метода retrieve, когда кэш ещё не был создан, и проверяет, что результат пуст.
+    func test_retrieve_deliversEmptyOnEmptyCache() {
+        let sut = makeSUT()
+        assertThatRetrieveDeliversEmptyOnEmptyCache(on: sut)
+    }
+    
+    /// Этот тест проверяет, что повторные вызовы метода retrieve на пустом кэше не изменяют его состояние. То есть, если кэш пуст, вызов метода retrieve несколько раз подряд должен возвращать один и тот же результат, без изменения состояния кэша.
+    func test_retrieve_hasNoSideEffectsOnEmptyCache() {
+        let sut = makeSUT()
+        assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
+    }
+    
+    /// Этот тест проверяет, что если кэш пуст и мы пытаемся удалить данные (вызов метода delete), то состояние кэша не изменится, и никаких ошибок не произойдет. То есть вызов delete на пустом кэше не должен иметь побочных эффектов.
+    
+    func test_delete_hasNoSideEffectsOnEmptyCache() {
+        let sut = makeSUT()
+        assertThatDeleteHasNoSideEffectsOnEmptyCache(on: sut)
     }
     
     // MARK: - Helpers
@@ -223,66 +191,5 @@ class CodableFeedStoreTests: XCTestCase {
     private func cachesDirectory() -> URL {
         return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
     }
-    
-    @discardableResult
-    private func insert(_ cache: (feed: [LocalFeedImage], timestamp: Date), to sut: FeedStore) -> Error? {
-        let exp = expectation(description: "Wait for cache insertion")
-        var insertionError: Error?
-        
-        sut.insert(cache.feed, timestamp: cache.timestamp) { receivedInsertionError in
-            insertionError = receivedInsertionError
-            exp.fulfill()
-        }
-        wait(for: [exp], timeout: 1.0)
-        return insertionError
-    }
-    
-    private func expect(
-        _ sut: FeedStore,
-        toRetrieve expectedResult: RetrieveCachedFeedResult,
-        file: StaticString = #file,
-        line: UInt = #line
-    ) {
-        
-        let exp = expectation(description: "Wait for cache retrieval")
-        
-        sut.retrieve { retrievedResult in
-            switch (expectedResult, retrievedResult) {
-            case (.empty, .empty), (.failure, .failure):
-                break
-                
-            case let (.found(expected), .found(retrieved)):
-                XCTAssertEqual(retrieved.feed, expected.feed, file: file, line: line)
-                XCTAssertEqual(retrieved.timestamp, expected.timestamp, file: file, line: line)
-                
-            default:
-                XCTFail("Expected to retrieve \(expectedResult), got \(retrievedResult) instead", file: file, line: line)
-            }
-            
-            exp.fulfill()
-        }
-        
-        wait(for: [exp], timeout: 1.0)
-    }
-    
-    private func expect(
-        _ sut: FeedStore,
-        toRetrieveTwice expectedResult: RetrieveCachedFeedResult,
-        file: StaticString = #file,
-        line: UInt = #line
-    ) {
-        expect(sut, toRetrieve: expectedResult, file: file, line: line)
-        expect(sut, toRetrieve: expectedResult, file: file, line: line)
-    }
-    
-    private func deleteCache(from sut: FeedStore) -> Error? {
-        let exp = expectation(description: "Wait for cache deletion")
-        var deletionError: Error?
-        sut.deleteCachedFeed { receivedDeletionError in
-            deletionError = receivedDeletionError
-            exp.fulfill()
-        }
-        wait(for: [exp], timeout: 1.0)
-        return deletionError
-    }
 }
+

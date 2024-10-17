@@ -41,7 +41,7 @@ public class CodableFeedStore: FeedStore {
     private let storeURL: URL
     
     private let queue = DispatchQueue(label: "\(CodableFeedImage.self)Queue", qos: .userInitiated, attributes: .concurrent)
-    
+
     // MARK: - Init
     
     public init(storeURL: URL) {
@@ -53,24 +53,18 @@ public class CodableFeedStore: FeedStore {
     public func retrieve(completion: @escaping RetrievalCompletion) {
         
         let storeURL = self.storeURL
-        
         queue.async {
             guard let data = try? Data(contentsOf: storeURL) else {
                 return completion(.empty)
             }
-        }
-        
-        
-        guard let data = try? Data(contentsOf: storeURL) else {
-            return  completion(.empty)
-        }
-        
-        do {
-            let decoder = JSONDecoder()
-            let cache = try decoder.decode(Cache.self, from: data)
-            completion(.found(feed: cache.localFeed, timestamp: cache.timestamp))
-        } catch {
-            completion(.failure(error))
+            
+            do {
+                let decoder = JSONDecoder()
+                let cache = try decoder.decode(Cache.self, from: data)
+                completion(.found(feed: cache.localFeed, timestamp: cache.timestamp))
+            } catch {
+                completion(.failure(error))
+            }
         }
     }
     
