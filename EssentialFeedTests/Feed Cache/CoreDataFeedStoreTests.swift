@@ -67,6 +67,14 @@ final class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         
         let storeBundle = Bundle(for: CoreDataFeedStore.self)
         
+        // Печать информации о доступных ресурсах в бандле
+          if let modelURL = storeBundle.url(forResource: "FeedStore", withExtension: "momd") {
+              print("Модель найдена по адресу: \(modelURL)")
+          } else {
+              print("Модель не найдена")
+          }
+        
+        
         let storeURL = URL(fileURLWithPath: "/dev/null")
         let sut = try! CoreDataFeedStore(storeURL: storeURL, bundle: storeBundle)
         
