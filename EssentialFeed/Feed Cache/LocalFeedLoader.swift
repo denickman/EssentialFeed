@@ -66,8 +66,8 @@ extension LocalFeedLoader: FeedLoader {
             
             switch result {
                 // Если кеш найден и его данные валидны (проверяется через политику FeedCachePolicy.validate), возвращает данные через completion(.success(...)).
-            case let .success(.found(feed, timestamp)) where FeedCachePolicy.validate(timestamp, against: self.currentDate()):
-                completion(.success(feed.toModels()))
+            case let .success(.some(cache)) where FeedCachePolicy.validate(cache.timestamp, against: self.currentDate()):
+                completion(.success(cache.feed.toModels()))
                 
                 // Если произошла ошибка при извлечении кеша, передает её через completion(.failure(...)).
             case let .failure(error):
@@ -93,7 +93,7 @@ extension LocalFeedLoader {
                 self.store.deleteCachedFeed { _ in }
                 
                 // Если кеш найден, но его время истекло (проверяется с помощью FeedCachePolicy.validate), кеш также удаляется.
-            case let .success(.found(_, timestamp)) where !FeedCachePolicy.validate(timestamp, against: self.currentDate()):
+            case let .success(.some(cache)) where !FeedCachePolicy.validate(cache.timestamp, against: self.currentDate()):
                 self.store.deleteCachedFeed { _ in }
                 
                 // сли кеш пуст или действителен, ничего не происходит.

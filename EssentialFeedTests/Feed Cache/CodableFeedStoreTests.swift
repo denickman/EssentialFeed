@@ -34,7 +34,7 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
     
     func test_retrieve_deliversEmptyOnEmtpyCache() {
         let sut = makeSUT()
-        expect(sut, toRetrieve: .success(.empty))
+        expect(sut, toRetrieve: .success(.none))
     }
     
     /// Этот тест проверяет, что при вставке данных в пустое хранилище, их последующее извлечение возвращает корректные данные без изменения состояния кэша. Тест проверяет, что хранилище сохраняет вставленные данные и возвращает их без побочных эффектов.
@@ -44,7 +44,7 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
         let timestamp = Date()
         
         insert((feed, timestamp), to: sut)
-        expect(sut, toRetrieve: .success(.found(feed: feed, timestamp: timestamp)))
+        expect(sut, toRetrieve: .success(CachedFeed(feed: feed, timestamp: timestamp)))
     }
     
     /// Этот тест проверяет, что если кэш содержит данные, то метод retrieve должен вернуть эти данные. В начале теста данные сохраняются в кэш, затем вызывается метод retrieve, и проверяется, что он возвращает сохранённые ранее данные.

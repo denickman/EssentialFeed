@@ -8,16 +8,34 @@
 import Foundation
 
 
-public enum CachedFeed {
-    case empty
-    case found(feed: [LocalFeedImage], timestamp: Date)
-}
+// shift + command + o - Optional type
+
+// since enum CachedFeed is look the same as optionals values we can move it into struct / see below
+
+//public enum CachedFeed {
+//    case empty // none Optional
+//    case found(feed: [LocalFeedImage], timestamp: Date) // some Optional
+//}
+
+//public struct CachedFeed {
+//   public let feed: [LocalFeedImage]
+//   public let timestamp: Date
+//    
+//   public init(feed: [LocalFeedImage], timestamp: Date) {
+//        self.feed = feed
+//        self.timestamp = timestamp
+//    }
+//}
+
+// or even convert it to the tuple
+
+public typealias CachedFeed = (feed: [LocalFeedImage], timestamp: Date)
 
 public protocol FeedStore {
     
     typealias InsertionCompletion = (Error?) -> Void
     typealias DeletionCompletion = (Error?) -> Void
-    typealias RetrievalResult = Swift.Result<CachedFeed, Error>
+    typealias RetrievalResult = Swift.Result<CachedFeed?, Error>
     typealias RetrievalCompletion = (RetrievalResult) -> Void
 
     
