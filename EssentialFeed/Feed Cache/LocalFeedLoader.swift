@@ -24,21 +24,25 @@ public final class LocalFeedLoader {
 
 extension LocalFeedLoader {
     
-    public typealias SaveResult = Error?
+    public typealias SaveResult = Result<Void, Error>
     
     //  Эта функция отвечает за сохранение нового списка изображений (feed) в кеш.
     public func save(_ feed: [FeedImage], completion: @escaping (SaveResult) -> Void) {
         // Сначала удаляет старый кеш, вызывая метод deleteCachedFeed у FeedStore.
         // удаляет предыдущие кешированные данные, прежде чем сохранить новые.
         
-        store.deleteCachedFeed { [weak self] error in
+        store.deleteCachedFeed { [weak self] deletionResult in
             guard let self else { return }
-            if let cacheDeletionError = error {
-                // Если при удалении кеша произошла ошибка, она передается через замыкание completion.
-                completion(cacheDeletionError)
-            } else {
+
+            switch deletionResult {
+            case .success:
                 // Если ошибок нет, вызывается приватный метод cache для сохранения нового списка изображений в хранилище.
                 self.cache(feed, with: completion)
+                
+            case let .failure(error):
+                // Если при удалении кеша произошла ошибка, она передается через замыкание completion.
+                completion(.failure(error))
+                
             }
         }
     }
@@ -48,9 +52,9 @@ extension LocalFeedLoader {
         store.insert(
             feed.toLocal(),
             timestamp: self.currentDate(),
-            completion: { [weak self] error in
+            completion: { [weak self] insertionResult in
                 guard self != nil else { return }
-                completion(error)
+                completion(insertionResult)
             })
     }
 }

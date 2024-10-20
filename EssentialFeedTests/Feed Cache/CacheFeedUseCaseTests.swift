@@ -16,7 +16,7 @@ enum Result {
 // Эти тесты проверяют правильность работы use case для кэширования фида (CacheFeedUseCase)
 
 final class CacheFeedUseCaseTests: XCTestCase {
-        
+    
     // Этот тест проверяет, что при создании экземпляра LocalFeedLoader не отправляются никакие сообщения в FeedStoreSpy. То есть проверяется, что объект инициализируется корректно и не выполняет лишних действий (например, не взаимодействует с хранилищем данных при создании).
     func test_init_doesNotMessageStoreUponCreation() {
         let (_, store) = makeSUT()
@@ -108,7 +108,11 @@ final class CacheFeedUseCaseTests: XCTestCase {
         var receivedResults = [Error?]()
         
         sut?.save(uniqueImageFeed().models, completion: { result in
-            receivedResults.append(result)
+            if case let .failure(error) = result {
+                receivedResults.append(error)
+            }
+#warning("Check with commits, does not work")
+            //            receivedResults.append(result)
         })
         
         store.completeDeletionSuccessfully()
@@ -138,8 +142,12 @@ final class CacheFeedUseCaseTests: XCTestCase {
         let exp = expectation(description: "Wait for save completion")
         var receivedError: Error?
         
-        sut.save(uniqueImageFeed().models) { error in
-            receivedError = error
+        sut.save(uniqueImageFeed().models) { result in
+            if case let .failure(error) = result {
+                receivedError = error
+            }
+#warning("Check with commits, does not work")
+            //            if case let Result.failure(error) = result { receivedError = error }
             exp.fulfill()
         }
         
