@@ -27,16 +27,29 @@ public final class CoreDataFeedStore: FeedStore {
     
     public func retrieve(completion: @escaping RetrievalCompletion) {
         perform { context in
-            do {
-                if let cache = try ManagedCache.find(in: context) {
-                    // you can use it without .some as well
-                    completion(.success(.some(CachedFeed(feed: cache.localFeed, timestamp: cache.timestamp))))
-                } else {
-                    completion(.success(.none))
+            // option # 1
+//            completion(Result(catching: {
+//                if let cache = try ManagedCache.find(in: context) {
+//                return CachedFeed(feed: cache.localFeed, timestamp: cache.timestamp)
+//                } else {
+//                    return .none
+//                }
+//            }))
+            
+            
+            // option # 2
+//            completion(Result(catching: {
+//                try ManagedCache.find(in: context).map { cache in
+//                return CachedFeed(feed: cache.localFeed, timestamp: cache.timestamp)
+//                }
+//            }))
+            
+            // option # 3
+            completion(Result {
+                try ManagedCache.find(in: context).map {
+                return CachedFeed(feed: $0.localFeed, timestamp: $0.timestamp)
                 }
-            } catch {
-                completion(.failure(error))
-            }
+            })
         }
     }
     
