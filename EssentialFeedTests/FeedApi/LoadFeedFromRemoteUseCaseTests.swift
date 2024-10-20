@@ -12,7 +12,7 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     
     func test_init_doesNotRequestDataFromUrl() {
         // Given
-        let (sut, client) = makeSUT()
+        let (_, client) = makeSUT()
         
         // Then
         XCTAssertNil(client.requestedURL)
@@ -98,17 +98,13 @@ final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
         
         let item1 = makeItem(id: UUID(), imageURL: URL(string: "http://a-url.com")!)
         let item2 = makeItem(id: UUID(), description: "foo", location: "foo", imageURL: URL(string: "http://a-url.com")!)
-        
-        let itemsJSON = [
-            "items": [item1.json, item2.json]
-        ]
-        
+
         let items = [item1.model, item2.model]
         
         expect(sut, toCompleteWith: .success(items)) {
             let json = makeItemsJSON([item1.json, item2.json])
             client.complete(with: 200, data: json)
-        }
+        }   
     }
     
     func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {

@@ -9,11 +9,18 @@ import CoreData
 
 public final class CoreDataFeedStore: FeedStore {
     
+    /// NSPersistentContainer управляет Core Data стеком, включая модель данных и хранилища. Это основа работы с Core Data.
     private let container: NSPersistentContainer
+    
+    /// NSManagedObjectContext — это контекст, в котором выполняются все операции с объектами Core Data (чтение, запись и т.д.). В данном случае используется контекст, работающий в фоне.
     private let context: NSManagedObjectContext
     
-    
     public init(storeURL: URL, bundle: Bundle = .main) throws {
+        
+        /// Этот инициализатор принимает storeURL — URL, где будет храниться база данных, и bundle, где находится модель данных Core Data.
+        /// Он использует метод load (из предыдущего расширения), чтобы загрузить контейнер Core Data с моделью FeedStore и настроить хранилище.
+        /// После этого инициализируется новый фоновый контекст с помощью newBackgroundContext(). Этот контекст будет использоваться для выполнения всех операций в фоне, что помогает избежать блокировок основного потока.
+        /// 
         container = try NSPersistentContainer.load(modelName: "FeedStore", url: storeURL, in: bundle)
         context = container.newBackgroundContext()
     }

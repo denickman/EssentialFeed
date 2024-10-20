@@ -20,6 +20,7 @@ class ManagedCache: NSManagedObject {
 extension ManagedCache {
     static func find(in context: NSManagedObjectContext) throws -> ManagedCache? {
         let request = NSFetchRequest<ManagedCache>(entityName: entity().name!)
+        /// request.returnsObjectsAsFaults = false — означает, что объекты будут загружены полностью, а не в виде "faults" (частично загруженных объектов Core Data).
         request.returnsObjectsAsFaults = false
         return try context.fetch(request).first
     }
