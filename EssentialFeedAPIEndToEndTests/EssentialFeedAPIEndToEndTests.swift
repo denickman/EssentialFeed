@@ -82,7 +82,7 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
         return URL(string: "https://url-\(index+1).com")!
     }
     
-    private func getFeedResult( file: StaticString = #filePath, line: UInt = #line) -> LoadFeedResult? {
+    private func getFeedResult( file: StaticString = #filePath, line: UInt = #line) -> FeedLoader.Result? {
         let testServerURL = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
         // The default directory when running tests is /Users/{your-user-name}/Library/Caches/com.apple.dt.xctest.tool
         let client = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
