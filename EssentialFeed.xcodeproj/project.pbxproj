@@ -51,10 +51,10 @@
 		85A02AF92CBA9A0100EC70B6 /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A02AF82CBA99FA00EC70B6 /* RemoteFeedItem.swift */; };
 		85A02AFB2CBA9A2C00EC70B6 /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A02AFA2CBA9A2A00EC70B6 /* LocalFeedImage.swift */; };
 		85E7D54E2CAD4B9B00BB030A /* LoadFeedFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E7D54D2CAD4B9B00BB030A /* LoadFeedFromRemoteUseCaseTests.swift */; };
-		85FD85082CC64F47004F5EE0 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85FD84FE2CC64F46004F5EE0 /* EssentialFeediOS.framework */; };
 		85FD85342CC7A0D8004F5EE0 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080EDEF121B6DA7E00813479 /* EssentialFeed.framework */; platformFilter = ios; };
 		85FD85352CC7A0D8004F5EE0 /* EssentialFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 080EDEF121B6DA7E00813479 /* EssentialFeed.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85FD853A2CC7A258004F5EE0 /* XCTestCase+MemoryLeakTrackingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854371A32CB5282E00FE9DE5 /* XCTestCase+MemoryLeakTrackingHelper.swift */; };
+		85FD854E2CC7B889004F5EE0 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85FD84FE2CC64F46004F5EE0 /* EssentialFeediOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,11 +161,26 @@
 		85FD85072CC64F47004F5EE0 /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		85FD85542CC7B8D6004F5EE0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				EssentialFeediOS.docc,
+			);
+			target = 85FD85062CC64F47004F5EE0 /* EssentialFeediOSTests */;
+		};
+		85FD85552CC7B8ED004F5EE0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				EssentialFeediOS.docc,
+			);
+			target = 85FD84FD2CC64F46004F5EE0 /* EssentialFeediOS */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8544A5572CC1295D004762CC /* EssentialFeedCacheIntegrationTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeedCacheIntegrationTests; sourceTree = "<group>"; };
-		85FD84E22CC64F23004F5EE0 /* EssentialFeediOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOS; sourceTree = "<group>"; };
-		85FD84EE2CC64F24004F5EE0 /* EssentialFeediOSTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOSTests; sourceTree = "<group>"; };
-		85FD84FF2CC64F46004F5EE0 /* EssentialFeediOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOS; sourceTree = "<group>"; };
+		85FD84FF2CC64F46004F5EE0 /* EssentialFeediOS */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (85FD85552CC7B8ED004F5EE0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 85FD85542CC7B8D6004F5EE0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOS; sourceTree = "<group>"; };
 		85FD850B2CC64F47004F5EE0 /* EssentialFeediOSTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOSTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -213,7 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85FD85082CC64F47004F5EE0 /* EssentialFeediOS.framework in Frameworks */,
+				85FD854E2CC7B889004F5EE0 /* EssentialFeediOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,8 +244,6 @@
 				080EDEFE21B6DA7E00813479 /* EssentialFeedTests */,
 				854371AC2CB55CF800FE9DE5 /* EssentialFeedAPIEndToEndTests */,
 				8544A5572CC1295D004762CC /* EssentialFeedCacheIntegrationTests */,
-				85FD84E22CC64F23004F5EE0 /* EssentialFeediOS */,
-				85FD84EE2CC64F24004F5EE0 /* EssentialFeediOSTests */,
 				85FD84FF2CC64F46004F5EE0 /* EssentialFeediOS */,
 				85FD850B2CC64F47004F5EE0 /* EssentialFeediOSTests */,
 				85FD85332CC7A0D8004F5EE0 /* Frameworks */,
