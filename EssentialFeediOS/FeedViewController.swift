@@ -1,6 +1,6 @@
 //
 //  FeedViewController.swift
-//  
+//
 //
 //  Created by Denis Yaremenko on 22.10.2024.
 //
@@ -38,9 +38,17 @@ final public class FeedViewController: UITableViewController {
     @objc private func load() {
         refreshControl?.beginRefreshing()
         loader?.load { [weak self] result in
-            self?.tableModel = (try? result.get()) ?? []
-            self?.tableView.reloadData()
-            self?.refreshControl?.endRefreshing()
+            
+            // self?.tableModel = (try? result.get()) ?? []
+
+            switch result {
+            case let .success(feed):
+                self?.tableModel = feed
+                self?.tableView.reloadData()
+                self?.refreshControl?.endRefreshing()
+                
+            case .failure: break
+            }
         }
     }
 }
@@ -51,7 +59,7 @@ extension FeedViewController {
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableModel.count
     }
-
+    
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellModel = tableModel[indexPath.row]
         let cell = FeedImageCell()

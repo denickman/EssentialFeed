@@ -26,6 +26,10 @@ private class LoaderSpy: FeedLoader {
         completions[index](.success(feed))
     }
     
+    func completeFeedLoadingWithError(at index: Int = 0) {
+        let error = NSError(domain: "an error", code: 0)
+        completions[index](.failure(error))
+    }
 }
 
 final class FeedViewControllerTests: XCTestCase {
@@ -83,6 +87,20 @@ final class FeedViewControllerTests: XCTestCase {
         assertThat(sut, isRendering: [image0, image1, image2, image3])
     }
     
+    
+    func test_loadFeedCompletion_doesNotAlterCurrentRenderingStateOnError() {
+        let image0 = makeImage()
+        let (sut, loader) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        loader.completeFeedLoading(with: [image0], at: 0)
+        assertThat(sut, isRendering: [image0])
+        
+        sut.simulateUserInitiatedFeedReload()
+        loader.completeFeedLoadingWithError(at: 1)
+        assertThat(sut, isRendering: [image0])
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
@@ -119,7 +137,7 @@ final class FeedViewControllerTests: XCTestCase {
         file: StaticString = #file,
         line: UInt = #line
     ) {
-        let view = sut.feedImageView(at: index)
+        let view = sut.feedImageView(at: index) // get TVCell
         
         guard let cell = view as? FeedImageCell else {
             return XCTFail("Expected \(FeedImageCell.self) instance, got \(String(describing: view)) instead", file: file, line: line)
