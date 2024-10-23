@@ -13,6 +13,13 @@ import EssentialFeediOS
 
 private class LoaderSpy: FeedLoader, FeedImageDataLoader {
     
+    private struct TaskSpy: FeedImageDataLoaderTask {
+        let cancelCallback: () -> Void
+        func cancel() {
+            cancelCallback()
+        }
+    }
+    
     private var feedRequests = [(FeedLoader.Result) -> Void]()
     
     var loadFeedCallCount: Int {
@@ -35,12 +42,9 @@ private class LoaderSpy: FeedLoader, FeedImageDataLoader {
         feedRequests[index](.failure(error))
     }
     
-    func loadImageData(from url: URL) {
+    func loadImageData(from url: URL) -> FeedImageDataLoaderTask {
         loadedImageURLs.append(url)
-    }
-    
-    func cancelImageDataLoad(from url: URL) {
-        cancelledImageURLs.append(url)
+        return TaskSpy { [weak self] in self?.cancelledImageURLs.append(url) }
     }
 }
 
