@@ -246,7 +246,6 @@
 				8544A5572CC1295D004762CC /* EssentialFeedCacheIntegrationTests */,
 				85FD84FF2CC64F46004F5EE0 /* EssentialFeediOS */,
 				85FD850B2CC64F47004F5EE0 /* EssentialFeediOSTests */,
-				85FD85332CC7A0D8004F5EE0 /* Frameworks */,
 				080EDEF221B6DA7E00813479 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -404,13 +403,6 @@
 				854371A52CB5504200FE9DE5 /* URLSessionHTTPClient.swift */,
 			);
 			path = "Feed API";
-			sourceTree = "<group>";
-		};
-		85FD85332CC7A0D8004F5EE0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
