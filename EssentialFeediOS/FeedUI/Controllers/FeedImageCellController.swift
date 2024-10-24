@@ -19,7 +19,7 @@ final class FeedImageCellController {
         self.imageLoader = imageLoader
     }
     
-    deinit {
+    func cancelLoad() {
         task?.cancel()
     }
     
