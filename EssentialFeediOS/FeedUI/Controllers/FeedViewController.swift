@@ -8,31 +8,26 @@
 import UIKit
 import EssentialFeed
 
-
-public protocol FeedImageDataLoaderTask {
-    func cancel()
-}
-
-public protocol FeedImageDataLoader {
-    typealias Result = Swift.Result<Data, Error>
-    
-    func loadImageData(from url: URL, completion: @escaping (Result) -> Void) -> FeedImageDataLoaderTask
-}
-
-final public class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
+public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
     
     // MARK: - Properties
     
-    private var feedLoader: FeedLoader?
-    private var tableModel = [FeedImage]()
+    private var refreshController: FeedRefreshViewController?
     private var imageLoader: FeedImageDataLoader?
     private var tasks = [IndexPath: FeedImageDataLoaderTask]()
+    
+    private var tableModel = [FeedImage]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     
     // MARK: - Init
     
     public convenience init(feedLoader: FeedLoader, imageLoader: FeedImageDataLoader) {
         self.init()
-        self.feedLoader = feedLoader
+        self.refreshController = FeedRefreshViewController(feedLoader: feedLoader)
         self.imageLoader = imageLoader
     }
     
@@ -40,36 +35,17 @@ final public class FeedViewController: UITableViewController, UITableViewDataSou
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl = refreshController?.view
+        refreshController?.onRefresh = { [weak self] feed in
+            self?.tableModel = feed
+        }
         
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(load), for: .valueChanged)
         tableView.prefetchDataSource = self
-        load()
+        refreshController?.refresh()
     }
     
     // MARK: - Methods
-    
-    @objc private func load() {
-        refreshControl?.beginRefreshing()
-        feedLoader?.load { [weak self] result in
-            
-            // self?.tableModel = (try? result.get()) ?? []
-            
-            //            switch result {
-            //            case let .success(feed):
-            //                self?.tableModel = feed
-            //                self?.tableView.reloadData()
-            //            case .failure: break
-            //            }
-            //            self?.refreshControl?.endRefreshing()
-            
-            if let feed = try? result.get() {
-                self?.tableModel = feed
-                self?.tableView.reloadData()
-            }
-            self?.refreshControl?.endRefreshing()
-        }
-    }
+
 }
 
 // MARK: - UITableViewDataSource

@@ -11,59 +11,13 @@ import UIKit
 import EssentialFeed
 import EssentialFeediOS
 
-private class LoaderSpy: FeedLoader, FeedImageDataLoader {
-    
-    private struct TaskSpy: FeedImageDataLoaderTask {
-        let cancelCallback: () -> Void
-        func cancel() {
-            cancelCallback()
-        }
-    }
-    
-    private var feedRequests = [(FeedLoader.Result) -> Void]()
-    
-    var loadFeedCallCount: Int {
-        return feedRequests.count
-    }
-    
-    private var imageRequests = [(url: URL, completion: (FeedImageDataLoader.Result) -> Void)]()
-    
-    var loadedImageURLs: [URL] {
-        return imageRequests.map { $0.url }
-    }
-    
-    private(set) var cancelledImageURLs = [URL]()
-    
-    func load(completion: @escaping (FeedLoader.Result) -> Void) {
-        feedRequests.append(completion)
-    }
-    
-    func completeFeedLoading(with feed: [FeedImage] = [], at index: Int = 0) {
-        feedRequests[index](.success(feed))
-    }
-    
-    func completeFeedLoadingWithError(at index: Int = 0) {
-        let error = NSError(domain: "an error", code: 0)
-        feedRequests[index](.failure(error))
-    }
-    
-    func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
-        imageRequests.append((url, completion))
-        return TaskSpy { [weak self] in self?.cancelledImageURLs.append(url) }
-    }
-    
-    func completeImageLoading(with imageData: Data = Data(), at index: Int = 0) {
-        imageRequests[index].completion(.success(imageData))
-    }
-    
-    func completeImageLoadingWithError(at index: Int = 0) {
-        let error = NSError(domain: "an error", code: 0)
-        imageRequests[index].completion(.failure(error))
-    }
-    
-}
-
 final class FeedViewControllerTests: XCTestCase {
+    
+    /// Что делает:
+    /// Этот тест проверяет, что при запуске действий (например, при загрузке) происходит запрос данных у загрузчика (loader).
+    
+    /// Что проверяет:
+    /// Проверяется, что действие для загрузки ленты инициирует вызов метода в загрузчике, который отвечает за получение данных. Это позволяет убедиться, что приложение корректно запрашивает данные при выполнении соответствующего действия, например, при запуске или обновлении интерфейса.
     
     func test_loadFeedActions_requestFeedFromLoader() {
         let (sut, loader) = makeSUT()
@@ -79,6 +33,9 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(loader.loadFeedCallCount, 3, "Expected yet another loading request once user initiates another reload")
     }
     
+    /// Что делает: Этот тест проверяет, отображается ли индикатор загрузки при вызове метода viewDidLoad контроллера.
+    /// Что проверяет: Проверяется, что индикатор загрузки виден на экране, что указывает на то, что происходит загрузка данных.
+    ///
     func test_viewDidLoad_showsLoadingIndicator() {
         let (sut, loader) = makeSUT()
         
@@ -94,6 +51,9 @@ final class FeedViewControllerTests: XCTestCase {
         loader.completeFeedLoadingWithError(at: 1)
         XCTAssertFalse(sut.isShowingLoadingIndicator, "Expected no loading indicator once user initiated loading completes with error")
     }
+    
+    /// Что делает: Этот тест проверяет, корректно ли отображается лента (feed) после успешной загрузки данных.
+    /// Что проверяет: Проверяет, что после завершения загрузки данные отображаются правильно на интерфейсе, и все ожидаемые элементы отображаются.
     
     func test_loadFeedCompletion_rendersSuccessfullyLoadedFeed() {
         
@@ -116,6 +76,8 @@ final class FeedViewControllerTests: XCTestCase {
         assertThat(sut, isRendering: [image0, image1, image2, image3])
     }
     
+    /// Что делает: Этот тест проверяет, что состояние отображения не изменяется при ошибке загрузки данных.
+    /// Что проверяет: Убедитесь, что при возникновении ошибки интерфейс остается в том же состоянии, и никакие элементы не удаляются или не изменяются.
     func test_loadFeedCompletion_doesNotAlterCurrentRenderingStateOnError() {
         let image0 = makeImage()
         let (sut, loader) = makeSUT()
@@ -129,6 +91,9 @@ final class FeedViewControllerTests: XCTestCase {
         assertThat(sut, isRendering: [image0])
     }
     
+    
+    /// Что делает: Этот тест проверяет, загружается ли URL изображения, когда он видим на экране.
+    /// Что проверяет: Проверяется, что загрузка изображения инициируется только тогда, когда элемент виден пользователю.
     func test_feedImageView_loadImageURLWhenVisible() {
         let image0 = makeImage(url: URL(string: "http://url-0.com")!)
         let image1 = makeImage(url: URL(string: "http://url-1.com")!)
@@ -146,6 +111,8 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(loader.loadedImageURLs, [image0.url, image1.url], "Expected second image URL request once second view also becomes visible")
     }
     
+    /// Что делает: Этот тест проверяет, отменяется ли загрузка изображения, если элемент больше не виден.
+    /// Что проверяет: Проверяет, что загрузка изображения прекращается, если элемент выходит за пределы видимости, чтобы избежать ненужных ресурсов.
     func test_feedImageView_cancelsImageLoadingWhenNotVisibleAnymore() {
         let image0 = makeImage(url: URL(string: "http://url-0.com")!)
         let image1 = makeImage(url: URL(string: "http://url-1.com")!)
@@ -162,6 +129,9 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(loader.cancelledImageURLs, [image0.url, image1.url], "Expected two cancelled image URL requests once second image is also not visible anymore")
     }
     
+    
+    /// Что делает: Этот тест проверяет, виден ли индикатор загрузки, когда изображение загружается.
+    /// Что проверяет: Убедитесь, что индикатор загрузки активен, пока изображение загружается, информируя пользователя о процессе.
     func test_feedImageViewLoadingIndicator_isVisibleWhileLoadingImage() {
         let (sut, loader) = makeSUT()
         
@@ -182,6 +152,8 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(view1?.isShowingImageLoadingIndicator, false, "Expected no loading indicator for second view once second image loading completes with error")
     }
     
+    /// Что делает: Этот тест проверяет, корректно ли отображается изображение после успешной загрузки из URL.
+    /// Что проверяет: Проверяется, что после завершения загрузки изображение отображается на экране, как и ожидалось.
     func test_feedImageView_rendersImageLoadedFromURL() {
         let (sut, loader) = makeSUT()
         
@@ -204,6 +176,10 @@ final class FeedViewControllerTests: XCTestCase {
         //        XCTAssertEqual(view1?.renderedImage, imageData1, "Expected image for second view once second image loading completes successfully")
     }
     
+    
+    /// Что делает: Этот тест проверяет, отображается ли кнопка повторной попытки при ошибке загрузки изображения.
+    /// Что проверяет: Убедитесь, что кнопка для повторной загрузки появляется, когда загрузка изображения не удалась.
+    ///
     func test_feedImageViewRetryButton_isVisibleOnImageURLLoadError() {
         let (sut, loader) = makeSUT()
         
@@ -225,7 +201,8 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(view1?.isShowingRetryAction, true, "Expected retry action for second view once second image loading completes with error")
     }
     
-    
+    /// Что делает: Этот тест проверяет, отображается ли кнопка повторной попытки, если загруженные данные изображения недействительны.
+    ///  Что проверяет: Проверяется, что при загрузке недействительных данных изображение не отображается, и появляется кнопка повторной попытки.
     func test_feedImageViewRetryButton_isVisibleOnInvalidImageData() {
         let (sut, loader) = makeSUT()
         
@@ -240,6 +217,9 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(view?.isShowingRetryAction, true, "Expected retry action once image loading completes with invalid image data")
     }
     
+    
+    // Что делает: Этот тест проверяет, выполняется ли повторная попытка загрузки изображения при нажатии на кнопку повторной попытки.
+    // Что проверяет: Убедитесь, что при нажатии на кнопку повторной попытки инициируется новая попытка загрузки изображения.
     func test_feedImageViewRetryAction_retriesImageLoad() {
         let image0 = makeImage(url: URL(string: "http://url-0.com")!)
         let image1 = makeImage(url: URL(string: "http://url-1.com")!)
@@ -264,6 +244,8 @@ final class FeedViewControllerTests: XCTestCase {
     }
     
     
+    /// Что делает: Этот тест проверяет, предзагружается ли URL изображения, когда он близок к видимой области.
+    /// Что проверяет: Проверяется, что изображение загружается заранее, когда пользователь приближается к его области просмотра.
     func test_feedImageView_preloadsImageURLWhenNearVisible() {
         let image0 = makeImage(url: URL(string: "http://url-0.com")!)
         let image1 = makeImage(url: URL(string: "http://url-1.com")!)
@@ -280,6 +262,9 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(loader.loadedImageURLs, [image0.url, image1.url], "Expected second image URL request once second image is near visible")
     }
     
+    
+    /// Что делает: Этот тест проверяет, отменяется ли предзагрузка URL изображения, если элемент больше не близок к видимости.
+    /// Что проверяет: Проверяется, что предзагрузка изображения прекращается, если элемент удаляется из области видимости, чтобы экономить ресурсы.
     func test_feedImageView_cancelsImageURLPreloadingWhenNotNearVisibleAnymore() {
         let image0 = makeImage(url: URL(string: "http://url-0.com")!)
         let image1 = makeImage(url: URL(string: "http://url-1.com")!)
@@ -310,157 +295,5 @@ final class FeedViewControllerTests: XCTestCase {
     private func makeImage(description: String? = nil, location: String? = nil, url: URL = URL(string: "http://any-url.com")!) -> FeedImage {
         FeedImage(id: UUID(), description: description, location: location, url: url)
     }
-    
-    private func assertThat(
-        _ sut: FeedViewController,
-        isRendering feed: [FeedImage],
-        file: StaticString = #file,
-        line: UInt = #line
-    ) {
-        guard sut.numberOfRenderedFeedImageViews() == feed.count else {
-            return XCTFail("Expected \(feed.count) images, got \(sut.numberOfRenderedFeedImageViews()) instead.", file: file, line: line)
-        }
-        
-        feed.enumerated().forEach { index, image in
-            assertThat(sut, hasViewConfiguredFor: image, at: index, file: file, line: line)
-        }
-    }
-    
-    private func assertThat(
-        _ sut: FeedViewController,
-        hasViewConfiguredFor image: FeedImage,
-        at index: Int,
-        file: StaticString = #file,
-        line: UInt = #line
-    ) {
-        let view = sut.feedImageView(at: index) // get TVCell
-        
-        guard let cell = view as? FeedImageCell else {
-            return XCTFail("Expected \(FeedImageCell.self) instance, got \(String(describing: view)) instead", file: file, line: line)
-        }
-        
-        let shouldLocationBeVisible = (image.location != nil)
-        XCTAssertEqual(cell.isShowingLocation, shouldLocationBeVisible, "Expected `isShowingLocation` to be \(shouldLocationBeVisible) for image view at index (\(index))", file: file, line: line)
-        
-        XCTAssertEqual(cell.locationText, image.location, "Expected location text to be \(String(describing: image.location)) for image  view at index (\(index))", file: file, line: line)
-        
-        XCTAssertEqual(cell.descriptionText, image.description, "Expected description text to be \(String(describing: image.description)) for image view at index (\(index)", file: file, line: line)
-    }
-}
-
-private extension UIRefreshControl {
-    func simulatePullToRefresh() {
-        allTargets.forEach { target in
-            actions(forTarget: target, forControlEvent: .valueChanged)?.forEach {
-                (target as NSObject).perform(Selector($0))
-            }
-        }
-    }
-}
-
-private extension FeedViewController {
-    
-    var feedImagesSection: Int { .zero }
-    
-    var isShowingLoadingIndicator: Bool {
-        refreshControl?.isRefreshing == true
-    }
-    
-    func simulateUserInitiatedFeedReload() {
-        refreshControl?.simulatePullToRefresh()
-    }
-    
-    func numberOfRenderedFeedImageViews() -> Int {
-        tableView.numberOfRows(inSection: feedImagesSection)
-    }
-    
-    func feedImageView(at row: Int) -> UITableViewCell? {
-        let ds = tableView.dataSource
-        let index = IndexPath(row: row, section: feedImagesSection)
-        return ds?.tableView(tableView, cellForRowAt: index)
-    }
-    
-    @discardableResult
-    func simulateFeedImageViewVisible(at index: Int) -> FeedImageCell? {
-        return feedImageView(at: index) as? FeedImageCell
-    }
-    
-    func simulateFeedImageViewNotVisible(at row: Int) {
-        let view = simulateFeedImageViewVisible(at: row)
-        
-        let delegate = tableView.delegate
-        let index = IndexPath(row: row, section: feedImagesSection)
-        delegate?.tableView?(tableView, didEndDisplaying: view!, forRowAt: index)
-    }
-    
-    func simulateFeedImageViewNearVisible(at row: Int) {
-        let ds = tableView.prefetchDataSource
-        let index = IndexPath(row: row, section: feedImagesSection)
-        ds?.tableView(tableView, prefetchRowsAt: [index])
-    }
-    
-    func simulateFeedImageViewNotNearVisible(at row: Int) {
-        simulateFeedImageViewNearVisible(at: row)
-        
-        let ds = tableView.prefetchDataSource
-        let index = IndexPath(row: row, section: feedImagesSection)
-        ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
-    }
-}
-
-
-private extension FeedImageCell {
-    
-    var isShowingLocation: Bool {
-        !locationContainer.isHidden
-    }
-    
-    var locationText: String? {
-        locationLabel.text
-    }
-    
-    var descriptionText: String? {
-        descriptionLabel.text
-    }
-    
-    var isShowingImageLoadingIndicator: Bool {
-        feedImageContainer.isShimmering
-    }
-    
-    var renderedImage: Data? {
-        feedImageView.image?.pngData()
-    }
-    
-    var isShowingRetryAction: Bool {
-        !feedImageRetryButton.isHidden
-    }
-    
-    func simulateRetryAction() {
-        feedImageRetryButton.simulateTap()
-    }
-    
-}
-
-private extension UIButton {
-    func simulateTap() {
-        allTargets.forEach { target in
-            actions(forTarget: target, forControlEvent: .touchUpInside)?.forEach {
-                (target as NSObject).perform(Selector($0))
-            }
-        }
-    }
-}
-
-
-private extension UIImage {
-    static func make(withColor color: UIColor) -> UIImage {
-        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
-        UIGraphicsBeginImageContext(rect.size)
-        let context = UIGraphicsGetCurrentContext()!
-        context.setFillColor(color.cgColor)
-        context.fill(rect)
-        let img = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return img!
-    }
+ 
 }
